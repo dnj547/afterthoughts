@@ -1,0 +1,2 @@
+module AfterthoughtsHelper
+end
