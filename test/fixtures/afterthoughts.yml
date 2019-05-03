@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  actual_location: MyString
+  actual_start: 2019-05-03 11:19:52
+  actual_end: 2019-05-03 11:19:52
+  actual_description: MyText
+  thoughts: MyText
+  rating: 1
+  event_id: 1
+
+two:
+  actual_location: MyString
+  actual_start: 2019-05-03 11:19:52
+  actual_end: 2019-05-03 11:19:52
+  actual_description: MyText
+  thoughts: MyText
+  rating: 1
+  event_id: 1
