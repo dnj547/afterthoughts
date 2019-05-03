@@ -3,4 +3,8 @@ class Attendee < ApplicationRecord
   has_many :afterthought_attendees
   has_many :events, through: :event_attendees
   has_many :afterthoughts, through: :afterthought_attendees
+
+  validates :name, length: {maximum: 30}
+  
+
 end
