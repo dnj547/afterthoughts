@@ -1,15 +1,21 @@
-<h1><%=@user.username%></h1>
+<h1><%=@user.username%></h1><br>
 
-<%= month_calendar events: @events do |date, events| %>
-  <%= date.day %>
 
-  <%= link_to "Add Event", "events/new" %>
+<% @calendars.each do |calendar| %>
+<br>
+  <h4><%= calendar.name %></h4>
+  <br>
+  <%= month_calendar events: @events do |date,events| %>
 
-  <% events.each do |event| %>
-    <div>
-      <%= linkt_to event.title,  %>
-    </div>
+    <%= date.day %>
+    <%= link_to "Add Event", "events/new" %>
+
+    <% events.each do |event| %>
+      <% if event.calendar == calendar %>
+       <div>
+         <%= link_to event.title,  "events/#{event.id}"%>
+       </div>
+      <% end %>
+    <% end %>
   <% end %>
-
-
 <% end %>
