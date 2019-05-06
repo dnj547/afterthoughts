@@ -1,7 +1,7 @@
 <% @user_afterthoughts.each do |afterthought| %>
   <div class="each_afterthought">
     <div class="afterthought_title">
-      <%= afterthought.event.title %><br>
+      <%= link_to afterthought.event.title, afterthought %><br>
     </div>
   </div>
 

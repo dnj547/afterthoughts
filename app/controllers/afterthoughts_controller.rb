@@ -3,7 +3,6 @@ class AfterthoughtsController < ApplicationController
   def index
     @user = current_user
     @user_afterthoughts = @user.afterthoughts
-
   end
 
 
@@ -15,8 +14,8 @@ class AfterthoughtsController < ApplicationController
 
   def new
     @user = current_user
-    @afterthought = Afterthought.new
     @events = @user.events
+    @afterthought = Afterthought.new
   end
 
   def create
@@ -33,8 +32,8 @@ class AfterthoughtsController < ApplicationController
 
   def edit
     @user = current_user
-    @afterthought = Afterthought.find(params[:id])
     @events = @user.events
+    @afterthought = Afterthought.find(params[:id])
   end
 
   def update
@@ -54,6 +53,7 @@ class AfterthoughtsController < ApplicationController
     @user = current_user
     @afterthought = Afterthought.find(params[:id])
     @afterthought.destroy
+    #we will need to change the redirect: using '@user' just to verify it works
     redirect_to @user
   end
 
