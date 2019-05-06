@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   # get 'users/signup', to: 'users#new', as: 'signup'
 
-  resources :users, :events
+  resources :users, :events, :afterthoughts
 
   resources :sessions, only: [:new,:create,:destroy]
   get 'signup', to:'users#new', as:'signup'

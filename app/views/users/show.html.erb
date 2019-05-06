@@ -1,8 +1,9 @@
 <h1><%=@user.username%></h1><br>
 <%= button_to "Add New Calendar", "/calendars/new", method:"get" %>
+<br>
 
 <% @calendars.each do |calendar| %>
-<br>
+<div class="single_calendar">
   <h4><%= calendar.name %></h4>
   <br>
   <%= month_calendar events: calendar.events do |date,events| %>
@@ -20,6 +21,7 @@
       <% end %>
     <% end %>
   <% end %>
+</div>
 <% end %>
 
 
