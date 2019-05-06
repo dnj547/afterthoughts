@@ -1,5 +1,5 @@
 <h1><%=@user.username%></h1><br>
-
+<%= button_to "Add New Calendar", "calendars/new" %>
 
 <% @calendars.each do |calendar| %>
 <br>
@@ -8,7 +8,7 @@
   <%= month_calendar events: @events do |date,events| %>
 
     <%= date.day %>
-    <%= link_to "Add Event", "events/new" %>
+    <%= link_to "Add Event", "/events/new" %>
 
     <% events.each do |event| %>
       <% if event.calendar == calendar %>
@@ -19,3 +19,8 @@
     <% end %>
   <% end %>
 <% end %>
+
+
+
+
+

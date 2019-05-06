@@ -17,3 +17,6 @@
 
  /*bootstrap calendar*/
 *= require simple_calendar
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
