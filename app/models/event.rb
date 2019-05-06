@@ -20,7 +20,6 @@ class Event < ApplicationRecord
 
 
   ##methods for easier calendar functionality
-
   def start_time
     self.start
   end
