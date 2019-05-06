@@ -8,6 +8,19 @@ class CalendarsController < ApplicationController
     redirect_to '/users/:id'
   end
 
+  def edit
+    @calendar = Calendar.find(params[:id])
+  end
+
+  def update
+    @calendar = Calendar.find(params[:id])
+    if @calendar.update(calendar_params)
+     redirect_to calendar_path(@calendar)
+   else
+     render :edit
+   end
+  end
+
   def destroy
     @user = current_user
     @calendar = Calendar.find(params[:id])
