@@ -1,7 +1,16 @@
-Event: <%= @event.title %>
-Visibility: <%= @event.visibility %>
-Organizer: <%= @event.organizer %>
-Description: <%= @event.description %>
-Location: <%= @event.location %>
-Starts at: <%= @event.start %>
-Ends at: <%= @event.end %>
+<%= @user.username %>'s Events <br>
+<%= flash[:message] %><br>
+Calendar: <%= @event.calendar.name %><br>
+Event: <%= @event.title %><br>
+Visibility: <%= @event.visibility %><br>
+Organizer: <%= @event.organizer %><br>
+Description: <%= @event.description %><br>
+Location: <%= @event.location %><br>
+Starts at: <%= @event.start %><br>
+Ends at: <%= @event.end %><br>
+
+<%= button_to "Edit Event", "/events/#{@event.id}/edit", method:"get" %><br>
+
+<%= button_to "Delete Event", @event, method:"delete" %><br>
+
+<%= button_to "Add Afterthought", "/afterthoughts/new", method: "get" %>
