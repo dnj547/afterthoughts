@@ -15,9 +15,5 @@ module Afterthoughts
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
-
-    ##sets beginning of week to Sunday instead of Monday
-    config.beginning_of_week = :sunday
   end
 end
-

@@ -1,9 +1,7 @@
 class UsersController < ApplicationController
 
   def show
-    @user = current_user
-    @calendars = @user.calendars
-    @events = @user.events
+
   end
 
   def new
