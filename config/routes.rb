@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   root 'application#welcome'
+  resources :users, :events, :calendars
+  resources :sessions, only: [:new, :create,:destroy]
 
-  # get 'users/signup', to: 'users#new', as: 'signup'
 
-  resources :users, :events
+  get '/calendars/new/:user_id', to: 'calendars#new'
+  post 'calendars', to: 'calendars#create'
 
-  resources :sessions, only: [:new,:create,:destroy]
   get 'signup', to:'users#new', as:'signup'
-  get 'login', to: 'sessions#new', as:'login'
+  get 'login', to: 'sessions#create', as:'login'
   get 'logout', to:'sessions#destroy', as: 'logout'
 end
