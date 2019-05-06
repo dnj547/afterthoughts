@@ -19,6 +19,12 @@ class Event < ApplicationRecord
   end
 
 
+  ##methods for easier calendar functionality
+
+  def start_time
+    self.start
+  end
+
 
 
 

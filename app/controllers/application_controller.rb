@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user
 
+
   def welcome
   end
 
@@ -11,4 +12,5 @@ class ApplicationController < ActionController::Base
       @current_user = nil
     end
   end
+
 end

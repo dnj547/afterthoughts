@@ -12,7 +12,15 @@
  *
  *= require_tree .
  *= require_self
+ *= require_calendar
  */
+
+
+ /*bootstrap calendar*/
+*= require simple_calendar
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
  body {
   padding: 0;
@@ -37,3 +45,4 @@
 .navbar-collapse {
   justify-content: flex-end;
 }
+

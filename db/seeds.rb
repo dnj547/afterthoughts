@@ -8,10 +8,10 @@ AfterthoughtAttendee.destroy_all
 
 
 ##User Seeds##
-dan = User.create!(username:"DanFyfe",password_digest: "password")#1
-danielle = User.create!(username:"DanielleJasper", password_digest: "password")#2
-rob = User.create!(username:"RobOGara", password_digest: "password")#3
-jeff = User.create!(username:"JeffMarks", password_digest: "password")#4
+dan = User.create!(username:"DanFyfe",password:"123", password_confirmation: "123")#1
+danielle = User.create!(username:"DanielleJasper", password:"123", password_confirmation: "123")#2
+rob = User.create!(username:"RobOGara", password:"123", password_confirmation: "123")#3
+jeff = User.create!(username:"JeffMarks", password:"123", password_confirmation: "123")#4
 
 ##Calendar Seeds##
 c1 = Calendar.create!(user:dan,name:"Social")#1
