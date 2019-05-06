@@ -4,4 +4,7 @@ class User < ApplicationRecord
   has_many :events, through: :calendars
   has_many :afterthoughts, through: :calendars
 
+
+
+
 end

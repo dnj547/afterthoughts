@@ -1,3 +1,67 @@
 // Place all the styles related to the calendars controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/* calendar */
+.simple-calendar {
+
+/*not working, but i think its the right general idea*/
+  .single_calendar {
+    border: 10px;
+  }
+
+  .day_display {
+
+
+  }
+  .day {
+    width: 100px;
+    height: 100px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgrey
+  }
+
+  .day:hover {
+    background-color: #6ab446;
+  }
+
+
+  .wday-0 {
+    margin-left: 10px;
+  }
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {
+    background-color: lightblue;
+  }
+  .past {}
+  .future {}
+
+  .start-date {
+
+  }
+
+  .prev-month {
+    background-color: #E8DDE6;
+  }
+  .next-month {
+    background-color: #E8DDE6;
+  }
+  .current-month {
+    /*background-color: #FFF;*/
+  }
+
+  .event {
+    background-color: red;
+  }
+
+  .has-events {
+    // this is showing up on every calendar for the user at the moment
+    background-color: pink;
+  }
+}
