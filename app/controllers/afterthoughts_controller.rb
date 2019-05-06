@@ -29,21 +29,32 @@ class AfterthoughtsController < ApplicationController
     else
       render :new
     end
-
-
-
   end
 
   def edit
-
+    @user = current_user
+    @afterthought = Afterthought.find(params[:id])
+    @events = @user.events
   end
 
   def update
+    @user = current_user
+    @afterthought = Afterthought.find(params[:id])
+    @afterthought.update(afterthought_params)
+
+    if @afterthought.valid?
+      redirect_to @afterthought
+    else
+      render :edit
+    end
 
   end
 
   def destroy
-
+    @user = current_user
+    @afterthought = Afterthought.find(params[:id])
+    @afterthought.destroy
+    redirect_to @user
   end
 
   private

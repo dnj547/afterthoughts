@@ -6,6 +6,10 @@
   <li>Actual Start: <%=@afterthought.actual_start%></li>
   <li>Actual End: <%=@afterthought.actual_end%></li>
   <li>Actual Description: <%=@afterthought.actual_description%></li>
-  <li></li>
+  <li>Thoughts: <%=@afterthought.thoughts%></li>
   <li>Rating: <%=@afterthought.rating%></li>
 </ul>
+
+<%= button_to "Update this Afterthought", "/afterthoughts/#{@afterthought.id}/edit", method: "get"%>
+
+<%= button_to "Delete this Afterthought", @afterthought, method:"delete" %>
