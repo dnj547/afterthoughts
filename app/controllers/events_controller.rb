@@ -1,5 +1,9 @@
 class EventsController < ApplicationController
 
+  def show
+    @event = Event.find(params[:id])
+  end
+
   def new
 
     @user = current_user
@@ -13,7 +17,6 @@ class EventsController < ApplicationController
     @event = Event.create(event_params)
     redirect_to @user
   end
-
 
   private
   def event_params

@@ -1,1 +1,9 @@
-create calendar
+<h1>New Calendar</h1>
+
+<%= form_for @calendar do |f| %>
+  <%= f.label "name" %>
+  <%= f.text_field :name %><br>
+  <%= f.hidden_field(:user_id, :value=>params[:user_id]) %>
+  <%= f.submit "Create Calendar" %>
+
+<% end %>
