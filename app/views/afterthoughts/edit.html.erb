@@ -1,0 +1,19 @@
+<h1>Udpate an Afterthought!</h1>
+
+<%= form_for @afterthought do |f| %>
+  <%= f.label "Event: "%>
+  <%= f.collection_select(:event_id,@events,:id,:title) %><br>
+  <%= f.label "Actual Location: " %>
+  <%= f.text_field :actual_location %><br>
+  <%= f.label "Actual Start: " %>
+  <%= f.datetime_select(:actual_start) %><br>
+  <%= f.label "Actual End: " %>
+  <%= f.datetime_select(:actual_end) %><br>
+  <%= f.label "Actual Description: " %>
+  <%= f.text_area :actual_description %><br>
+  <%= f.label "Thoughts: " %>
+  <%= f.text_area :thoughts %><br>
+  <%= f.label "Rating: " %>
+  <%= f.number_field :rating, max:5 %><br>
+  <%= f.submit "Update Afterthought!" %>
+<% end %>

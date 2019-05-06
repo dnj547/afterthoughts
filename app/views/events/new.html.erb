@@ -1,6 +1,7 @@
 <h1><%= @user.username %></h1>
 
 <%= form_for @event do |f| %>
+
   <%= f.label "title" %>
   <%= f.text_field :title %><br>
   <%= f.label "description" %>
@@ -8,11 +9,10 @@
   <%= f.label "Location" %>
   <%= f.text_field :location %><br>
   <%= f.label "start" %>
-  <%= f.datetime_select(:start) %><br>
+  <%= f.datetime_select(:start, :start_year=>params[:year],:start_month=>params[:month],:start_day=>params[:day]) %><br>
   <%= f.label "end" %>
   <%= f.datetime_select(:end) %><br>
-  <%= f.label "Calendar" %>
-  <%= f.collection_select(:calendar_id,@user_calendars,:id,:name) %><br>
+  <%= f.hidden_field(:calendar_id,:value=>params[:calendar_id])%>
   <%= f.label "visibility" %>
   <%= f.text_field :visibility %><br>
   <%= f.label "organizer" %>
