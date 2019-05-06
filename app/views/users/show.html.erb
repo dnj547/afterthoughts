@@ -10,7 +10,7 @@
 
     <h4><%= date.day %>.<br>
 
-    <%= link_to "Add Event", "/events/new" %>
+    <%= link_to "Add Event", "/events/new/#{calendar.id}/#{date.year}/#{date.month}/#{date.day}" %>
 
     <% events.each do |event| %>
       <% if event.calendar == calendar %>
