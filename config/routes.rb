@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  root 'application#welcome'
-
+  root 'static_pages#home'
 
   ## calendar routes ##
   get '/calendars/new/:user_id', to: 'calendars#new'
