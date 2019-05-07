@@ -1,11 +1,11 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "Afterthoughts", '#', id: "logo" %>
+    <%= link_to image_tag("https://docs.google.com/drawings/d/e/2PACX-1vQGGmvtiNVS1EiYhDl4Rfs_VT1z46u6QKhKNuEVEtjmeli1knX4pesIanHr1BoeWfV2bk7rRZbdqiPn/pub?w=271&h=60"), '/', id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
+        <%= link_to 'Home', '/' %>
         <%if !current_user.nil?%>
           Logged in as <%=current_user.username%><br>
-          <%= link_to 'Home', '/' %>
           <%=link_to 'Log Out', logout_path%>
       <%else%>
         <%=link_to 'Sign Up', signup_path%> or
