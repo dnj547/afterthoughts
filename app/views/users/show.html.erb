@@ -3,10 +3,6 @@
   <h2><%=@user.username%></h2>
 </div>
 
-<div class="flash_message">
-  <h4><%= flash[:message] %></h4>
-</div>
-
 <div class="add_calendar">
   <%= link_to "Add New Calendar", "/calendars/new/#{@user.id}" %>
 </div>
