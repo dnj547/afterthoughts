@@ -29,7 +29,15 @@
 }
 /*--- navigation bar ---*/
 .navbar {
-  background:#6ab446;
+  /* background:#6ab446; */
+  border-radius: 0px;
+  background: #84a9b9;
+  border-left-style: outset;
+  border-left-color: #B6CDD6;
+  border-left-width: 10px;
+  box-shadow: 2px 2px 2px lightgrey;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
 }
 .nav-link,
 .navbar-brand {
@@ -46,5 +54,10 @@
   justify-content: flex-end;
 }
 
+.navbar-brand {
+  width:auto;
+  height:auto;
+}
 
 /*--- calendar CSS located in calendars.scss ---*/
+

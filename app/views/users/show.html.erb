@@ -1,29 +1,47 @@
-<h1><%=@user.username%></h1><br>
-<h4><%= flash[:message] %></h4><br>
-<%= link_to "Add New Calendar", "/calendars/new/#{@user.id}" %>
+<div class="user_name">
+  <h2><%=@user.username%></h2>
+</div>
+
+<div class="flash_message">
+  <h4><%= flash[:message] %></h4>
+</div>
+
+<div class="add_calendar">
+  <%= link_to "Add New Calendar", "/calendars/new/#{@user.id}" %>
+</div>
+
 
 <% @calendars.each do |calendar| %>
-<div class= "single_calendar">
-  <h4><%= calendar.name %></h4>
-  <br>
+<div class= "full_calendar">
+    <div class="calendar_name">
+      <h4><%= calendar.name %></h4>
+    </div>
+
+    <button type="button" class="collapse_button" data-toggle="collapse" data-target="#calendar_collapsible">Collapse</button>
+    <!-- <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#calendar_collapsible">Simple collapsible</button> -->
+
+<div id="calendar_collapsible" class="calendar_collapsible">
+
   <%= month_calendar events: calendar.events do |date,events| %>
 
-    <h4><%= date.day %>.<br>
+    <h4><%= date.day %></h4>
 
-    <%= link_to "Add Event", "/events/new/#{calendar.id}/#{date.year}/#{date.month}/#{date.day}" %>
+    <div class="link_to_add_event">
+      <%= link_to "Add Event", "/events/new/#{calendar.id}/#{date.year}/#{date.month}/#{date.day}" %>
+    </div>
 
     <% events.each do |event| %>
       <% if event.calendar == calendar %>
-       <div>
+       <div class="link_to_event">
          <li><%= link_to event.title,  "/events/#{event.id}"%></li>
-
        </div>
       <% end %>
     <% end %>
   <% end %>
 
+
   <%= button_to "Delete #{calendar.name} Calendar", calendar, method: "delete" %>
 
-  <br>
+  </div>
 </div>
 <% end %>
