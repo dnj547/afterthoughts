@@ -1,5 +1,9 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user
+  helper_method :current_user, :log_in
+
+  def log_in(user)
+    session[:user_id] = user.id
+  end
 
   def welcome
   end

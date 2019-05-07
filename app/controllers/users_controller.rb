@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  # def log_in(user)
+  #   session[:user_id] = user.id
+  # end
+
   def show
     # byebug
     @user = current_user
