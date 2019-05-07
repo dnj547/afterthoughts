@@ -2,32 +2,69 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /* calendar */
+/*not working, but i think its the right general idea*/
+.add_calendar {
+  padding: 10px;
+}
+
+.link_to_add_event {
+
+}
+
+.link_to_event {
+
+}
+
+.user_name {
+  font-family: 'Rubik', sans-serif;
+  padding-left: 10px;
+}
+
+.calendar_name {
+  margin: 10px;
+  font-family: 'Rubik', sans-serif;
+
+}
+
+.single_calendar {
+  margin: 20px;
+  padding: 10px;
+  border-style: solid;
+  border-color: #84A9B7;
+  border-width: thin;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px lightgrey;
+}
+
 .simple-calendar {
 
-/*not working, but i think its the right general idea*/
-  .single_calendar {
-    border: 10px;
-  }
-
+  // day above each calendar columns
   .day_display {
+    text-align: center;
+    background-color: #84a9b9;
+    border-style: solid;
+    border-width: thin;
+    border-color: #7f7f7f;
 
 
   }
   .day {
     width: 100px;
+    max-width: 100px;
     height: 100px;
     border-style: solid;
     border-width: 1px;
-    border-color: lightgrey
+    border-color: #7f7f7f;
   }
 
   .day:hover {
-    background-color: #6ab446;
+    background-color: #B5E9FF;
   }
 
 
   .wday-0 {
-    margin-left: 10px;
+
+
   }
   .wday-1 {}
   .wday-2 {}
@@ -37,7 +74,7 @@
   .wday-6 {}
 
   .today {
-    background-color: lightblue;
+    background-color: #B5E9FF;
   }
   .past {}
   .future {}
@@ -47,10 +84,10 @@
   }
 
   .prev-month {
-    background-color: #E8DDE6;
+    background-color: #B6CDD6;
   }
   .next-month {
-    background-color: #E8DDE6;
+    background-color: #B6CDD6;
   }
   .current-month {
     /*background-color: #FFF;*/
@@ -62,6 +99,6 @@
 
   .has-events {
     // this is showing up on every calendar for the user at the moment
-    background-color: pink;
+    background-color: #69D2FF;
   }
 }
