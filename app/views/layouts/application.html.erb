@@ -5,9 +5,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+<<<<<<< HEAD
 <!--
       old bootstrap? not sure what this is
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+=======
+>>>>>>> Fix log out issue and add rspec tests
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
@@ -18,7 +21,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="application.css">
     <link rel="icon" href="https://docs.google.com/drawings/d/e/2PACX-1vRzvysK7g9K8b94S_HCxQlF6zcU2KyV5NhjgyWXMevxZNmLbIl6td0HVLUua5N5P30I5rNucVwt7oYi/pub?w=187&h=50" type="image">
 
@@ -43,13 +46,13 @@
           </li>
         </ul>
       </div>
-      <%if current_user%>
-      Logged in as <%=current_user.username%>
-      <br>
-      <%=link_to 'Log Out', logout_path%>
+      <%if !current_user.nil?%>
+        Logged in as <%=current_user.username%>
+        <br>
+        <%=link_to 'Log Out', logout_path%>
       <%else%>
-      <%=link_to 'Sign Up', signup_path%> or
-      <%=link_to 'Log In', login_path%>
+        <%=link_to 'Sign Up', signup_path%> or
+        <%=link_to 'Log In', login_path%>
       <%end%>
     </nav>
     <%= yield %>
