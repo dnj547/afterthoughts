@@ -3,10 +3,37 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /* calendar */
 /*not working, but i think its the right general idea*/
+.flash_message {
+  padding: 10px;
+  margin: 10px;
+
+}
 .add_calendar {
   padding: 10px;
+  margin: 10px;
 }
 
+.collapse_button {
+  padding: 3px;
+  margin: 10px;
+  border-radius: 3px;
+  border-color: #84A9B7;
+  border-style: outset;
+  background-color: #B5E9FF;
+  box-shadow: 1px 1px 1px lightgrey;
+  font-family: 'Rubik', sans-serif;
+}
+.collapse_button:hover {
+  -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    background-color: #69D2FF;
+
+}
+
+.calendar_collapsible {
+  padding: 5px;
+  // display: none;
+}
 .link_to_add_event {
 
 }
@@ -26,7 +53,21 @@
 
 }
 
-.single_calendar {
+
+.calendar-heading {
+  padding: 5px;
+  margin: 5px;
+
+}
+
+.calendar-title {
+  font-family: 'Rubik', sans-serif;
+  font-weight: bolder;
+
+  padding: 5px;
+  margin: 5px;
+}
+.full_calendar {
   margin: 20px;
   padding: 10px;
   border-style: solid;
@@ -45,8 +86,8 @@
     border-style: solid;
     border-width: thin;
     border-color: #7f7f7f;
-
-
+    // border-top-right-radius: 5px;
+    // border-top-left-radius: 5px;
   }
   .day {
     width: 100px;
