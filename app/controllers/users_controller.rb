@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @calendars = @user.calendars
-    
   end
 
   def new

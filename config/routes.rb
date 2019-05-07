@@ -8,13 +8,12 @@ Rails.application.routes.draw do
 
   ##events routes##
   get "/events/new/:calendar_id/:year/:month/:day", to: 'events#new'
-  
-
 
   ## signup, login, logout routes ##
-  get 'signup', to:'users#new', as:'signup'
-  get 'login', to: 'sessions#create', as:'login'
-  get 'logout', to:'sessions#destroy', as: 'logout'
+  get    '/signup',  to: 'users#new'
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
 
   ## resources ##
   resources :users, :events, :calendars, :afterthoughts
