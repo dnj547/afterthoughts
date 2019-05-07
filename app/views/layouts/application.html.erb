@@ -1,63 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Afterthoughts</title>
+    <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<!--
-      old bootstrap? not sure what this is
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
-=======
->>>>>>> Fix log out issue and add rspec tests
-=======
->>>>>>> ca9dda16e3b6abb59bef7cab3337968bac8f43be
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <!-- loads Rubik font -->
-    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
-    <!-- copied from welcome page to display on all pages -->
-    <title>Afterthoughts</title>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="application.css">
-    <link rel="icon" href="https://docs.google.com/drawings/d/e/2PACX-1vRzvysK7g9K8b94S_HCxQlF6zcU2KyV5NhjgyWXMevxZNmLbIl6td0HVLUua5N5P30I5rNucVwt7oYi/pub?w=187&h=50" type="image">
-
+    <%= render 'layouts/shim' %>
   </head>
-
   <body>
-    <nav class="navbar navbar-expand-md">
-      <a class="navbar-brand" href="#"><img src="https://docs.google.com/drawings/d/e/2PACX-1vQGGmvtiNVS1EiYhDl4Rfs_VT1z46u6QKhKNuEVEtjmeli1knX4pesIanHr1BoeWfV2bk7rRZbdqiPn/pub?w=271&h=60" alt="Afterthoughts Logo""></a>
-      <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="main-navigation">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="/users/1">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
-      <%if !current_user.nil?%>
-        Logged in as <%=current_user.username%>
-        <br>
-        <%=link_to 'Log Out', logout_path%>
-      <%else%>
-        <%=link_to 'Sign Up', signup_path%> or
-        <%=link_to 'Log In', login_path%>
-      <%end%>
-    </nav>
-    <%= yield %>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

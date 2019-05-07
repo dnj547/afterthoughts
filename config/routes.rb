@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  root 'application#welcome'
-
+  root 'static_pages#home'
 
   ## calendar routes ##
   get '/calendars/new/:user_id', to: 'calendars#new'
@@ -8,8 +7,6 @@ Rails.application.routes.draw do
 
   ##events routes##
   get "/events/new/:calendar_id/:year/:month/:day", to: 'events#new'
-  
-
 
   ## signup, login, logout routes ##
   get 'signup', to:'users#new', as:'signup'
