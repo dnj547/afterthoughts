@@ -3,16 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /* calendar */
 /*not working, but i think its the right general idea*/
-.flash_message {
-  padding: 10px;
-  margin: 10px;
 
-}
+
+
+// calendar add link
 .add_calendar {
   padding: 10px;
   margin: 10px;
 }
 
+// button to collapse calendar; currently broken
 .collapse_button {
   padding: 3px;
   margin: 10px;
@@ -27,39 +27,39 @@
   -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     background-color: #69D2FF;
-
 }
 
+// body of calendar that would collapse if it could
 .calendar_collapsible {
   padding: 5px;
   // display: none;
 }
-.link_to_add_event {
 
+
+.link_to_add_event {
+  
 }
 
 .link_to_event {
 
 }
 
-.user_name {
-  font-family: 'Rubik', sans-serif;
-  padding-left: 10px;
-}
 
+
+// name of calendar
 .calendar_name {
   margin: 10px;
   font-family: 'Rubik', sans-serif;
-
 }
 
-
+// previous, month, next
 .calendar-heading {
+
   padding: 5px;
   margin: 5px;
-
 }
 
+// title of calendar
 .calendar-title {
   font-family: 'Rubik', sans-serif;
   font-weight: bolder;
@@ -67,6 +67,8 @@
   padding: 5px;
   margin: 5px;
 }
+
+// full calendar
 .full_calendar {
   margin: 20px;
   padding: 10px;
@@ -77,6 +79,7 @@
   box-shadow: 2px 2px 2px lightgrey;
 }
 
+// master class for each calendar
 .simple-calendar {
 
   // day above each calendar columns
@@ -89,6 +92,8 @@
     // border-top-right-radius: 5px;
     // border-top-left-radius: 5px;
   }
+
+  // single day
   .day {
     width: 100px;
     max-width: 100px;
@@ -103,10 +108,7 @@
   }
 
 
-  .wday-0 {
-
-
-  }
+  .wday-0 {}
   .wday-1 {}
   .wday-2 {}
   .wday-3 {}
@@ -117,6 +119,7 @@
   .today {
     background-color: #B5E9FF;
   }
+
   .past {}
   .future {}
 
@@ -139,7 +142,6 @@
   }
 
   .has-events {
-    // this is showing up on every calendar for the user at the moment
     background-color: #69D2FF;
   }
 }

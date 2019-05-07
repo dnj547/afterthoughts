@@ -22,6 +22,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+/* flash messages */
+.flash_message {
+  padding: 10px;
+  margin: 10px;
+}
+
  body {
   padding: 0;
   margin: 0;

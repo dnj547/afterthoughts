@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'application#welcome'
 
+  ## afterthoughts routes ##
+  get '/afterthoughts/new/:event_id', to: 'afterthoughts#new'
 
   ## calendar routes ##
   get '/calendars/new/:user_id', to: 'calendars#new'
@@ -13,7 +15,7 @@ Rails.application.routes.draw do
   get    '/signup',  to: 'users#new'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
+  get '/logout',  to: 'sessions#destroy'
 
   ## resources ##
   resources :users, :events, :calendars, :afterthoughts

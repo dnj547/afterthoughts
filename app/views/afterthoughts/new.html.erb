@@ -1,8 +1,7 @@
 <h1>Create a new Afterthought!</h1>
-
+<%= flash[:message] %><br>
 <%= form_for @afterthought do |f| %>
-  <%= f.label "Event: "%>
-  <%= f.collection_select(:event_id,@events,:id,:title) %><br>
+  <%= f.hidden_field(:event_id,:value=>params[:event_id])%>
   <%= f.label "Actual Location: " %>
   <%= f.text_field :actual_location %><br>
   <%= f.label "Actual Start: " %>
