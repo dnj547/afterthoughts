@@ -3,9 +3,9 @@
     <%= link_to "Afterthoughts", '#', id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
+        <%= link_to 'Home', '/' %>
         <%if !current_user.nil?%>
           Logged in as <%=current_user.username%><br>
-          <%= link_to 'Home', '/' %>
           <%=link_to 'Log Out', logout_path%>
       <%else%>
         <%=link_to 'Sign Up', signup_path%> or

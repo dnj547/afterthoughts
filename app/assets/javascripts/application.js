@@ -16,3 +16,5 @@
 //= require_tree .
 
 = require twitter-bootstrap-calendar
+// = require jquery
+// = require bootstrap

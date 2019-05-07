@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def show
+    # byebug
     @user = current_user
     @calendars = @user.calendars
   end
@@ -12,6 +13,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.valid?
+      log_in @user
       flash[:success] = "Welcome to Afterthoughts!"
       redirect_to @user
     else
