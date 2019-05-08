@@ -1,4 +1,5 @@
-<h1><%= @event.title %></h1>
+<h1><%=@event.title%></h1>
+
 <%= flash[:message] %>
 <h2>Details</h2>
 <ul>
@@ -11,10 +12,12 @@
   <li>Start: <%= @event.start.strftime("%A, %b %eth, %Y at %l:%M %P ")%></li>
   <li>End: <%= @event.end.strftime("%A, %b %eth, %Y at %l:%M %P ") %></li>
 </ul>
-<br>
-<%= button_to "Edit Event", "/events/#{@event.id}/edit", method:"get" %><br>
 
-<%= button_to "Delete Event", @event, method:"delete" %><br>
+<br>
+
+<%= button_to "Edit Event", "/events/#{@event.id}/edit", method:"get" %>
+
+<%= button_to "Delete Event", @event, method:"delete" %>
 
 <% if @event.afterthought == nil %>
   <%= button_to "Add Afterthought", "/afterthoughts/new/#{@event.id}", method: "get" %>
