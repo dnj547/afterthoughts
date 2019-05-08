@@ -5,8 +5,9 @@ class CalendarsController < ApplicationController
 
   def create
     @calendar = Calendar.create!(calendar_params)
-    flash[:message] = "Calendar Successfully Created!"
-    redirect_to '/users/:id'
+    @user = User.find(params[:calendar][:user_id])
+    flash[:notice] = "Calendar Successfully Created!"
+    redirect_to @user
   end
 
   def edit
@@ -16,10 +17,10 @@ class CalendarsController < ApplicationController
   def update
     @calendar = Calendar.find(params[:id])
     if @calendar.update(calendar_params)
-      flash[:message] = "Calendar Successfully Updated!"
+      flash[:notice] = "Calendar Successfully Updated!"
      redirect_to calendar_path(@calendar)
    else
-     flash[:message] = @calendar.errors.full_messages
+     flash[:alert] = @calendar.errors.full_messages
      render :edit
    end
   end
@@ -28,7 +29,7 @@ class CalendarsController < ApplicationController
     @user = current_user
     @calendar = Calendar.find(params[:id])
     @calendar.destroy
-    flash[:message] = "Calendar Successfully Deleted!"
+    flash[:notice] = "Calendar Successfully Deleted!"
     redirect_to @user
   end
 
