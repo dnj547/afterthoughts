@@ -1,15 +1,17 @@
-<%= @user.username %>'s Event <br>
-<%= flash[:message] %><br>
-
-Calendar: <%= @event.calendar.name %><br>
-Event: <%= @event.title %><br>
-Visibility: <%= @event.visibility %><br>
-Organizer: <%= @event.organizer %><br>
-Description: <%= @event.description %><br>
-Location: <%= @event.location %><br>
-Start: <%= @event.start.strftime("%A, %b %eth, %Y at %l:%M %P ")%><br>
-End: <%= @event.end.strftime("%A, %b %eth, %Y at %l:%M %P ") %><br>
-
+<h1><%= @event.title %></h1>
+<%= flash[:message] %>
+<h2>Details</h2>
+<ul>
+  <li>Calendar: <%= @event.calendar.name %></li>
+  <li>Event: <%= @event.title %></li>
+  <li>Visibility: <%= @event.visibility %></li>
+  <li>Organizer: <%= @event.organizer %></li>
+  <li>Description: <%= @event.description %></li>
+  <li>Location: <%= @event.location %></li>
+  <li>Start: <%= @event.start.strftime("%A, %b %eth, %Y at %l:%M %P ")%></li>
+  <li>End: <%= @event.end.strftime("%A, %b %eth, %Y at %l:%M %P ") %></li>
+</ul>
+<br>
 <%= button_to "Edit Event", "/events/#{@event.id}/edit", method:"get" %><br>
 
 <%= button_to "Delete Event", @event, method:"delete" %><br>

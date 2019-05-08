@@ -10,6 +10,9 @@
   <li>Rating: <%=@afterthought.rating%></li>
 </ul>
 
+<br>
 <%= button_to "Update this Afterthought", "/afterthoughts/#{@afterthought.id}/edit", method: "get"%>
 
 <%= button_to "Delete this Afterthought", @afterthought, method:"delete" %>
+
+<%= button_to "View Event Details", @afterthought.event,method:"get"%>
