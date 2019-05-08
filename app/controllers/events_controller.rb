@@ -15,11 +15,10 @@ class EventsController < ApplicationController
   def create
     @user = current_user
     @user_calendars = @user.calendars
-    @attendee = Attendee.create()
     @event = Event.create(event_params)
     if @event.valid?
-      flash[:message] = "Event Created"
-      redirect_to @user
+      redirect_to new_attendee_path
+      
     else
       flash[:message] = @event.errors.full_messages
     end
@@ -58,7 +57,5 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:calendar_id,:visibility,:organizer,:title,:description,:start,:end,:location,:afterthought_id)
   end
-
-
 
 end
