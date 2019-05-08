@@ -1,26 +1,31 @@
-<h1><%= @user.username %></h1>
-<%= flash[:message] %>
-<h3>Add Event!</h3>
-<%= form_for @event do |f| %>
 
-  <%= f.label "title" %>
-  <%= f.text_field :title %>
-  <%= f.label "description" %>
-  <%= f.text_area :description %>
-  <%= f.label "Location" %>
-  <%= f.text_field :location %>
-  <%= f.label "start" %>
-  <%= f.datetime_select(:start, default: DateTime.new(params[:year].to_i,params[:month].to_i,params[:day].to_i)) %>
-  <%= f.label "end" %>
-  <%= f.datetime_select(:end, default: DateTime.new(params[:year].to_i,params[:month].to_i,params[:day].to_i)) %>
-  <%= f.hidden_field(:calendar_id,:value=>params[:calendar_id])%>
-  <%= f.label "visibility" %>
-  <%= f.text_field :visibility %>
-  <%= f.label "organizer" %>
-  <%= f.text_field :organizer %>
+<div class="container">
+  <h1><%= @user.username %></h1><br>
+  <%= flash[:message] %><br>
+  <h3>Add Event!</h3><br>
+  <%= form_for @event do |f| %>
 
 
+    <%= f.label "title" %>
+    <%= f.text_field :title %>
+    <%= f.label "description" %>
+    <%= f.text_area :description %>
+    <%= f.label "Location" %>
+    <%= f.text_field :location %>
+    <%= f.label "start" %>
+    <%= f.datetime_select(:start, default: DateTime.new(params[:year].to_i,params[:month].to_i,params[:day].to_i)) %>
+    <%= f.label "end" %>
+    <%= f.datetime_select(:end, default: DateTime.new(params[:year].to_i,params[:month].to_i,params[:day].to_i)) %>
+    <%= f.hidden_field(:calendar_id,:value=>params[:calendar_id])%>
+    <%= f.label "visibility" %>
+    <%= f.text_field :visibility %>
+    <%= f.label "organizer" %>
+    <%= f.text_field :organizer %>
 
-  <%= f.submit "Create Event" %>
 
-<% end %>
+
+    <%= f.submit "Create Event" %>
+
+  <% end %>
+</div>
+

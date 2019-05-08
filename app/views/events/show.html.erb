@@ -1,6 +1,7 @@
-<h1><%=@event.title%></h1>
+<div class="container">
+  <h1><%=@event.title%></h1>
 
-<%= flash[:message] %>
+
 <h2>Event Details</h2>
 <ul>
   <li>Calendar: <%= @event.calendar.name %></li>
@@ -18,14 +19,18 @@
     </li>
 </ul>
 
-<br>
 
-<%= button_to "Edit Event", "/events/#{@event.id}/edit", method:"get" %>
+  <br>
 
-<%= button_to "Delete Event", @event, method:"delete" %>
+  <%= button_to "Edit Event", "/events/#{@event.id}/edit", method:"get" %>
 
-<% if @event.afterthought == nil %>
-  <%= button_to "Add Afterthought", "/afterthoughts/new/#{@event.id}", method: "get" %>
-<% else %>
-  <%= button_to "View Afterthought", "/afterthoughts/#{@event.afterthought.id}", method: "get" %>
-<% end %>
+  <%= button_to "Delete Event", @event, method:"delete" %>
+
+
+  <% if @event.afterthought == nil %>
+    <%= button_to "Add Afterthought", "/afterthoughts/new/#{@event.id}", method: "get" %>
+  <% else %>
+    <%= button_to "View Afterthought", "/afterthoughts/#{@event.afterthought.id}", method: "get" %>
+  <% end %>
+</div>
+
