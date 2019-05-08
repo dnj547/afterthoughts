@@ -72,3 +72,7 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 
 #simple calendar
 gem "simple_calendar", "~> 2.0"
+
+
+#datepicker
+gem 'bootstrap-datepicker-rails'
