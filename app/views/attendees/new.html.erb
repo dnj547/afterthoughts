@@ -1,4 +1,6 @@
-<h1>Add Attendees to <%= @event.title %></h1>
+<div class="container">
+
+<h1>Add Attendee to <%= @event.title %></h1>
 
 <%= form_for @attendee do |f| %>
 
@@ -6,5 +8,8 @@
   <%= f.text_field :name %><br>
   <%= f.label "Notes: " %>
   <%= f.text_field :notes %><br>
-  <%= f.submit "Create Afterthought!" %>
+  <%= f.submit "Add Attendee!" %>
 <% end %>
+
+  <%= button_to "View Event Details", @event, method: "get" %>
+</div>

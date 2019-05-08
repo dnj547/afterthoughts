@@ -1,4 +1,6 @@
-<h1>Create a new Afterthought!</h1>
+<div class="container">
+
+<h1>Add an Afterthought!</h1>
 
 <%= form_for @afterthought do |f| %>
   <%= f.hidden_field(:event_id,:value=>params[:event_id])%>
@@ -10,9 +12,12 @@
   <%= f.datetime_select(:actual_end) %><br>
   <%= f.label "Actual Description: " %>
   <%= f.text_area :actual_description %><br>
+  <%= f.label "Actual Attendees: " %>
+  <%= f.text_area :actual_description %><br>
   <%= f.label "Thoughts: " %>
   <%= f.text_area :thoughts %><br>
   <%= f.label "Rating: " %>
   <%= f.number_field :rating, max:5 %><br>
-  <%= f.submit "Create Afterthought!" %>
+  <%= f.submit "Add Afterthought!" %>
 <% end %>
+</div>

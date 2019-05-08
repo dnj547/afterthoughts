@@ -3,6 +3,7 @@ class AttendeesController < ApplicationController
   def new
     @attendee = Attendee.new
     @event = Event.last
+
   end
 
   def create
@@ -11,8 +12,12 @@ class AttendeesController < ApplicationController
     @attendee = Attendee.create(attendee_params)
     @event_attendee = EventAttendee.create(event: @event, attendee: @attendee)
     if @attendee.valid?
-      flash[:message] = "Event Created"
-      redirect_to @user
+      flash[:message] = "Attendee Created"
+      if @event.attendees
+        redirect_to new_attendee_path
+      else
+      redirect_to @event
+    end
     end
   end
 

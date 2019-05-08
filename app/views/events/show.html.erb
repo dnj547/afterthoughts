@@ -14,8 +14,8 @@
   <li>End: <%= @event.end.strftime("%A, %b %eth, %Y at %l:%M %P ") %></li>
   <li>Attendees:
   <%@event.attendees.each do |attendee|%>
-      <ul>Name: <%=attendee.name%><br>
-        Notes: <%=attendee.notes%>
+      <ul><%=attendee.name%><br>
+        <li>Notes: <%=attendee.notes%></li>
       </ul><br>
       <%end%>
     </li>
@@ -34,5 +34,7 @@
   <% else %>
     <%= button_to "View Afterthought", "/afterthoughts/#{@event.afterthought.id}", method: "get" %>
   <% end %>
+
+  <%= button_to "Add Attendee", "/attendees/new", method: "get" %>
 </div>
 
