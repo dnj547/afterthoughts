@@ -1,3 +1,4 @@
+<div class="container">
 <h1><%=@afterthought.event.title%></h1>
 <%= flash[:message] %>
 <h2>Afterthought Details</h2>
@@ -9,6 +10,13 @@
   <li>Actual Description: <%=@afterthought.actual_description%></li>
   <li>Thoughts: <%=@afterthought.thoughts%></li>
   <li>Rating: <%=@afterthought.rating%></li>
+  <li>Actual Attendees:
+  <%@afterthought.event.attendees.each do |attendee|%>
+      <ul>Name: <%=attendee.name%><br>
+        Notes: <%=attendee.notes%>
+      </ul><br>
+      <%end%>
+    </li>
 </ul>
 
 <br>
@@ -18,3 +26,5 @@
 <%= button_to "Delete this Afterthought", @afterthought, method:"delete" %>
 
 <%= button_to "View Event Details", @afterthought.event,method:"get"%>
+
+</div>

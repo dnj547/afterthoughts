@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
 
+  ## attendee routes ##
+  post '/attendees', to:'attendees#create'
+
 
   ## afterthoughts routes ##
   get '/afterthoughts/new/:event_id', to: 'afterthoughts#new'

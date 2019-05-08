@@ -19,3 +19,4 @@
 = require twitter-bootstrap-calendar
 // = require jquery
 // = require bootstrap
+//= require nested_form_fields
