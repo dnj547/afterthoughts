@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
 
+
+  ## afterthoughts routes ##
+  get '/afterthoughts/new/:event_id', to: 'afterthoughts#new'
+
+
   ## calendar routes ##
   get '/calendars/new/:user_id', to: 'calendars#new'
   post 'calendars', to: 'calendars#create'

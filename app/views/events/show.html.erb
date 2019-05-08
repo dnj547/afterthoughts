@@ -1,5 +1,6 @@
-<%= @user.username %>'s Events <br>
+<%= @user.username %>'s Event <br>
 <%= flash[:message] %><br>
+
 Calendar: <%= @event.calendar.name %><br>
 Event: <%= @event.title %><br>
 Visibility: <%= @event.visibility %><br>
@@ -13,4 +14,8 @@ Ends at: <%= @event.end %><br>
 
 <%= button_to "Delete Event", @event, method:"delete" %><br>
 
-<%= button_to "Add Afterthought", "/afterthoughts/new", method: "get" %>
+<% if @event.afterthought == nil %>
+  <%= button_to "Add Afterthought", "/afterthoughts/new/#{@event.id}", method: "get" %>
+<% else %>
+  <%= button_to "View Afterthought", "/afterthoughts/#{@event.afterthought.id}", method: "get" %>
+<% end %>

@@ -18,7 +18,7 @@
 
  /*bootstrap calendar*/
 *= require simple_calendar
-
+*= require bootstrap-datepicker
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -50,3 +50,12 @@ nav .navbar-nav li a:hover {
 
 
 /*--- calendar CSS located in calendars.scss ---*/
+
+
+/* .date_selector {
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+  display: block;
+  width: 100px;
+} */
