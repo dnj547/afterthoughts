@@ -11,6 +11,11 @@
   <li>Location: <%= @event.location %></li>
   <li>Start: <%= @event.start.strftime("%A, %b %eth, %Y at %l:%M %P ")%></li>
   <li>End: <%= @event.end.strftime("%A, %b %eth, %Y at %l:%M %P ") %></li>
+  <li>Attendees:
+  <%@event.attendees.each do |attendee|%>
+      <ul><%=attendee.name%></ul>
+      <%end%>
+    </li>
 </ul>
 
 <br>
