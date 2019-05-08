@@ -5,7 +5,9 @@
       <ul class="nav navbar-nav navbar-right">
         <%if !current_user.nil?%>
         <li class="nav-item">
-          <a class="nav-link" href="/users/<%=@user.id%>">Home</a>
+
+          <a class="nav-link" href="/users/<%=@user.id%>">My Calendars</a>
+
         </li>
           <li class="nav-item">
             <a class="nav-link" href="logout">Log Out</a>
@@ -22,3 +24,6 @@
     </nav>
   </div>
 </header>
+<div class="container-fullwidth">
+  <h2 class="username">Logged in as: <%=@user.username%></h2>
+</div>
