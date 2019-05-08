@@ -3,6 +3,7 @@ class Event < ApplicationRecord
   has_one :afterthought
   has_many :event_attendees
   has_many :attendees, through: :event_attendees
+  accepts_nested_attributes_for :attendees, allow_destroy: true
 
 
   validates :organizer, presence: true, length: {maximum: 30}

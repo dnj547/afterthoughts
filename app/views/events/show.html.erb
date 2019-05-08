@@ -14,7 +14,9 @@
   <li>End: <%= @event.end.strftime("%A, %b %eth, %Y at %l:%M %P ") %></li>
   <li>Attendees:
   <%@event.attendees.each do |attendee|%>
-      <ul><%=attendee.name%></ul>
+      <ul>Name: <%=attendee.name%><br>
+        Notes: <%=attendee.notes%>
+      </ul><br>
       <%end%>
     </li>
 </ul>

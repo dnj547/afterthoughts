@@ -1,4 +1,5 @@
-<h1>Udpate an Afterthought!</h1>
+<div class="container">
+  <h1>Udpate an Afterthought!</h1>
 
 <%= form_for @afterthought do |f| %>
   <%= f.label "Event: "%>
@@ -17,3 +18,4 @@
   <%= f.number_field :rating, max:5 %><br>
   <%= f.submit "Update Afterthought!" %>
 <% end %>
+</div>
