@@ -3,8 +3,8 @@
 <ul>
   <li>Event: <%=@afterthought.event.title%></li>
   <li>Actual Location: <%=@afterthought.actual_location%></li>
-  <li>Actual Start: <%=@afterthought.actual_start%></li>
-  <li>Actual End: <%=@afterthought.actual_end%></li>
+  <li>Actual Start: <%=@afterthought.actual_start.strftime("%A, %b %eth, %Y at %l:%M %P ")%></li>
+  <li>Actual End: <%=@afterthought.actual_end.strftime("%A, %b %eth, %Y at %l:%M %P ")%></li>
   <li>Actual Description: <%=@afterthought.actual_description%></li>
   <li>Thoughts: <%=@afterthought.thoughts%></li>
   <li>Rating: <%=@afterthought.rating%></li>

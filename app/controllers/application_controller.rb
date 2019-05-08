@@ -1,5 +1,10 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user, :log_in
+  helper_method :current_user, :log_in, :current_user?
+
+
+  def current_user?(user)
+    user == current_user
+  end
 
   def log_in(user)
     session[:user_id] = user.id

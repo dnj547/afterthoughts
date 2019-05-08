@@ -7,8 +7,8 @@ Visibility: <%= @event.visibility %><br>
 Organizer: <%= @event.organizer %><br>
 Description: <%= @event.description %><br>
 Location: <%= @event.location %><br>
-Starts at: <%= @event.start %><br>
-Ends at: <%= @event.end %><br>
+Start: <%= @event.start.strftime("%A, %b %eth, %Y at %l:%M %P ")%><br>
+End: <%= @event.end.strftime("%A, %b %eth, %Y at %l:%M %P ") %><br>
 
 <%= button_to "Edit Event", "/events/#{@event.id}/edit", method:"get" %><br>
 
