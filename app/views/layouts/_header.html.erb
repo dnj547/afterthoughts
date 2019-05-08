@@ -10,20 +10,22 @@
 
         </li>
           <li class="nav-item">
-            <a class="nav-link" href="logout">Log Out</a>
+            <a class="nav-link" href="/logout">Log Out</a>
           </li>
         <%else%>
           <li class="nav-item">
-            <a class="nav-link" href="signup">Sign Up</a>
+            <a class="nav-link" href="/signup">Sign Up</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login">Log In</a>
+            <a class="nav-link" href="/login">Log In</a>
           </li>
         <%end%>
       </ul>
     </nav>
   </div>
 </header>
+<% if logged_in? %>
 <div class="container-fullwidth">
   <h2 class="username">Logged in as: <%=@user.username%></h2>
 </div>
+<%end%>
