@@ -3,10 +3,12 @@
     <%= link_to image_tag("https://docs.google.com/drawings/d/e/2PACX-1vQGGmvtiNVS1EiYhDl4Rfs_VT1z46u6QKhKNuEVEtjmeli1knX4pesIanHr1BoeWfV2bk7rRZbdqiPn/pub?w=271&h=60"), '/', id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
+
         <%if logged_in? && !!current_user%>
           <li class="nav-item">
             <a class="nav-link" href="/users/<%=current_user.id%>">My Calendars</a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="/logout">Log Out</a>
           </li>
