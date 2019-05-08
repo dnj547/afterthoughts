@@ -13,4 +13,4 @@ Ends at: <%= @event.end %><br>
 
 <%= button_to "Delete Event", @event, method:"delete" %><br>
 
-<%= button_to "Add Afterthought", "/afterthoughts/new", method: "get" %>
+<%= button_to "Add Afterthought", "/afterthoughts/new/#{@event.id}", method: "get" %>
