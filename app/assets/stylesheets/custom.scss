@@ -88,6 +88,7 @@ input {
   height: auto !important;
 }
 
+
 #error_explanation {
   color: red;
   ul {
@@ -108,4 +109,25 @@ input {
 .username {
   margin: 30px;
   text-align: right;
+}
+
+//buttons
+.btn-primary {
+  background: #84a9b9;
+  border: 1px solid #000;
+  font-size: 1.7em;
+}
+
+.btn-primary:hover {
+  background: gray !important;
+  }
+
+.make_one {
+  font-size: 7em;
+  text-align: center;
+}
+
+.add_calendar {
+  font-size: 1.2em;
+  text-align: center;
 }
