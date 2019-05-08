@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:show]
 
   def show
-    # byebug
     @user = current_user
     @calendars = @user.calendars
   end
@@ -14,6 +13,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+    @calendar = Calendar.create(user:@user,name:"#{@user.username}")
     if @user.valid?
       log_in @user
       flash[:success] = "Welcome to Afterthoughts!"
