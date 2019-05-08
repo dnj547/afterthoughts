@@ -28,35 +28,25 @@
   background: #f2f6e9;
 }
 /*--- navigation bar ---*/
+
 .navbar {
-  /* background:#6ab446; */
-  border-radius: 0px;
   background: #84a9b9;
-  border-left-style: outset;
-  border-left-color: #B6CDD6;
-  border-left-width: 10px;
   box-shadow: 2px 2px 2px lightgrey;
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px;
-}
-.nav-link,
-.navbar-brand {
-  color: #fff;
-  cursor: pointer;
-}
-.nav-link {
-  margin-right: 1em !important;
-}
-.nav-link:hover {
-  color: #000;
-}
-.navbar-collapse {
-  justify-content: flex-end;
+  padding-left: 10px;
+  padding-right: 20px;
 }
 
-.navbar-brand {
-  width:auto;
-  height:auto;
-}
+nav .navbar-nav li a {
+  padding-top: 25px;
+  color: white !important;
+  }
+
+nav .navbar-nav li a:hover {
+  color: gray !important;
+  }
+
+
 
 /*--- calendar CSS located in calendars.scss ---*/
