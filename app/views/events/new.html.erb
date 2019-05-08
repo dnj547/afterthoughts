@@ -1,7 +1,6 @@
 <!-- new events form -->
 <div class="container">
   <h1><%= @user.username %></h1><br>
-  <%= flash[:message] %><br>
   <h3>Add Event!</h3><br>
   <%= form_for @event do |f| %>
     <%= f.label "title" %>
@@ -19,29 +18,7 @@
     <%= f.text_field :visibility %>
     <%= f.label "organizer" %>
     <%= f.text_field :organizer %>
-
-    <%= f.label "attendees"%>
-    <% @event.attendees.each do |attendee| %>
-    <%= attendee.name %><br>
-    <% end %>
-    
-    <%= f.nested_fields_for :attendees do |ff| %>
-      <%= ff.remove_nested_fields_link %>
-      <%= ff.label "Attendee Name" %>
-      <%= ff.text_field :name %>
-      <%= ff.text_field :notes %>
-      <%= f.add_nested_fields_link :attendees %>
-    <% end %>
-
-
-
-
-
-
-
     <%= f.submit "Create Event" %>
   <% end %>
 
-
 </div>
-

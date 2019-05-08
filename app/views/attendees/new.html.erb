@@ -1,0 +1,10 @@
+<h1>Add Attendees to <%= @event.title %></h1>
+
+<%= form_for @attendee do |f| %>
+
+  <%= f.label "Name: " %>
+  <%= f.text_field :name %><br>
+  <%= f.label "Notes: " %>
+  <%= f.text_field :notes %><br>
+  <%= f.submit "Create Afterthought!" %>
+<% end %>
