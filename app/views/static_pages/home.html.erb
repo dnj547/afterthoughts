@@ -1,6 +1,8 @@
 <% provide(:title, "Welcome") %>
-
 <div class="center jumbotron">
   <h1>Welcome to Afterthoughts</h1>
+<%if logged_in? && !!current_user%>
+<%else%>
   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+<%end%>
 </div>
