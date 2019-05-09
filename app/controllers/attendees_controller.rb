@@ -31,8 +31,6 @@ class AttendeesController < ApplicationController
     @user = current_user
     @afterthought = Afterthought.find(params[:id])
     @event = @afterthought.event
-    # byebug
-
     @attendee = Attendee.create(actual_params)
     @afterthought_attendee = AfterthoughtAttendee.create(afterthought:@afterthought,attendee:@attendee)
     if @attendee.valid?
