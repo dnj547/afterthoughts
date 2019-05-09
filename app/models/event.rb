@@ -48,16 +48,33 @@ class Event < ApplicationRecord
       end
     end
 
-  ## Average rating of all events in past 30 days
-    def self.average_rating_events_in_past_30_days
-      Event.events_in_past_30_days.map do |event|
-        if event.afterthought
+
+  ## Events with ratings in past 30 days
+    def self.events_with_ratings_in_past_30_days
+      Event.events_in_past_30_days.select do |event|
+        event.afterthought
+      end
+
+    end
+
+  ## Ratings of all events in past 30 days
+    def self.rating_of_all_events_in_past_30_days
+      Event.events_with_ratings_in_past_30_days.map do |event|
           event.afterthought.rating
-        end
       end
     end
 
+  ## Average rating of all events in past 30 days
+    def self.average_rating_events_in_past_30_days
+      total = 0
+      Event.rating_of_all_events_in_past_30_days.each do |rating|
+        total += rating
+      end
+      total / (Event.rating_of_all_events_in_past_30_days.length)
+    end
 
 
+    ## Instance Methods
+    
 
 end

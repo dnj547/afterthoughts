@@ -48,6 +48,17 @@
     <h4>Event: <%=@user.afterthought_most_words.event.title%></h4>
     <h4>Thoughts: <%=@user.afterthought_most_words.thoughts%></h4>
 
+  <h2>Most Common Word in All Afterthoughts</h2>
+    <h4><%=Afterthought.most_common_word_in_all_afterthoughts%></h4>
+  <h2>Most Common Word in Your Afterthoughts</h2>
+    <h4><%=@user.most_common_word_in_afterthoughts%></h4>
+
+  <h2>Average Rating of All Events in the Past 30 Days</h2>
+    <h1><%=Event.average_rating_events_in_past_30_days%></h1>
+
+  <h2>Average Rating of Your Events in the Past 30 Days</h2>
+    <h1><%=@user.my_average_rating_events_in_past_30_days%></h1>
+
 
 <% end %>
 
