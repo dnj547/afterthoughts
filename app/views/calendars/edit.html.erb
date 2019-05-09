@@ -4,7 +4,7 @@
   <%= form_for @calendar do |f| %>
     <%= f.label "name" %>
     <%= f.text_field :name %><br>
-    <%= f.hidden_field(:user_id, :value=>params[:user_id]) %>
+    <%= f.hidden_field(:user_id, :value=>@user.id) %>
     <%= f.submit "Update Calendar" %>
 
   <% end %>

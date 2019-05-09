@@ -14,35 +14,57 @@
   margin: 10px;
 }
 
-.collapse_button {
-  padding: 3px;
-  margin: 10px;
-  border-radius: 3px;
-  border-color: #84A9B7;
-  border-style: outset;
-  background-color: #B5E9FF;
-  box-shadow: 1px 1px 1px lightgrey;
-  font-family: 'Rubik', sans-serif;
-}
-.collapse_button:hover {
-  -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    background-color: #69D2FF;
-
-}
+// .collapse_button {
+//   padding: 3px;
+//   margin: 10px;
+//   border-radius: 3px;
+//   border-color: #84A9B7;
+//   border-style: outset;
+//   background-color: #B5E9FF;
+//   box-shadow: 1px 1px 1px lightgrey;
+//   font-family: 'Rubik', sans-serif;
+// }
+// .collapse_button:hover {
+//   -webkit-transition-duration: 0.4s; /* Safari */
+//     transition-duration: 0.4s;
+//     background-color: #69D2FF;
+//
+// }
 
 .calendar_collapsible {
   padding: 5px;
   // display: none;
 }
-.link_to_add_event {
 
+.date-number-and-plus {
+  display: flex;
+  justify-content: space-between;
 }
 
 .date_number {
   margin-top: -10px;
+  display: inline;
+}
+
+.add-event-plus {
+  background-color: #B5E9FF;
+  display: inline;
+  border-style: solid;
+  border-color: #84A9B7;
+  border-width:medium;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px lightgrey;
 
 }
+
+.add-event-plus:hover {
+  -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.2s;
+      background-color: #84a9b9;
+
+}
+
+
 
 .button_to_event {
   background-color: #B5E9FF;
@@ -118,9 +140,9 @@
     border-color: #7f7f7f;
   }
 
-  .day:hover {
-    background-color: #B5E9FF;
-  }
+  // .day:hover {
+  //   background-color: #B5E9FF;
+  // }
 
 
   .wday-0 {
