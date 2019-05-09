@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   post 'calendars', to: 'calendars#create'
 
   ##events routes##
+  post "/events", to: 'events#create'
   get "/events/new/:calendar_id/:year/:month/:day", to: 'events#new'
+
 
   ## signup, login, logout routes ##
   get    '/signup',  to: 'users#new'

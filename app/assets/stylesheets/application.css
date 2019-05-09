@@ -19,8 +19,9 @@
  /*bootstrap calendar*/
 *= require simple_calendar
 *= require bootstrap-datepicker
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'bootstrap-datetimepicker';
 
  body {
   padding: 0;
