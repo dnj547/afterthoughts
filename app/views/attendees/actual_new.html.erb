@@ -1,16 +1,16 @@
 <div class="container">
 
-<h1>Add Attendee to <%= @event.title %></h1>
+<h1>Add Attendee to <%= @event.title %>'s Afterthought</h1>
 
-<%= form_for @attendee do |f| %>
+<%= form_for "/afterthoughts/attendees" do |f| %>
 
   <%= f.label "Name: " %>
   <%= f.text_field :name %><br>
   <%= f.label "Notes: " %>
   <%= f.text_field :notes %><br>
   <%= f.submit "Add Attendee!" %>
+
 <% end %>
 
-  <%= button_to "View Event Details", @event, method: "get" %>
-  
+  <%= button_to "View Afterthought Details", @afterthought, method: "get" %>
 </div>

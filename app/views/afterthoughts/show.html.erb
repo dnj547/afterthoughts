@@ -27,6 +27,6 @@
 
 <%= button_to "View Event Details", @afterthought.event,method:"get"%>
 
-<%= button_to "Add Attendee", "afterthoughts", method: "get" %>
+<%= button_to "Add Attendee", "/afterthoughts/attendees/new/#{@afterthought.id}", method: "get" %>
 
 </div>

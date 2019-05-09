@@ -36,7 +36,7 @@
           <% else %>
           <%= link_to "View Afterthought", "/afterthoughts/#{@event.afterthought.id}", class: "btn btn-lg btn-primary" %>
           <% end %>
-          <%= link_to "Add Attendee", "/attendees/new", class: "btn btn-lg btn-primary" %>
+          <%= link_to "Add Attendee", "/afterthoughts/attendees/new/#{@event.id}", class: "btn btn-lg btn-primary" %>
           <%= link_to "Delete Event", @event, method:"delete", class: "btn btn-lg btn-danger" %>
 
       </div>
