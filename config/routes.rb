@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   ##events routes##
   post "/events", to: 'events#create'
+  get "/events", to: 'events#show'
   get "/events/new/:calendar_id/:year/:month/:day", to: 'events#new'
 
   ## attendee routes ##
@@ -21,8 +22,6 @@ Rails.application.routes.draw do
   get '/calendars/new/:user_id', to: 'calendars#new'
   post 'calendars', to: 'calendars#create'
 
-
-
   ## signup, login, logout routes ##
   get    '/signup',  to: 'users#new'
   post '/signup',  to: 'users#create'
@@ -30,7 +29,12 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   get '/logout',  to: 'sessions#destroy'
 
+
   ## resources ##
   resources :users, :events, :calendars, :afterthoughts, :attendees
   resources :sessions, only: [:new, :create,:destroy]
+
+  get '*path' => redirect('/')
+
+
 end

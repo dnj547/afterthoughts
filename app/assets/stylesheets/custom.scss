@@ -41,7 +41,7 @@ h1 {
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
-  margin-top: -15px;
+  margin-top: 30px;
   text-align: center;
 }
 
@@ -150,7 +150,6 @@ input {
 
 .calendar_name {
   font-size: 2em !important;
-  text-align: left;
 
 }
 
@@ -171,4 +170,15 @@ new-heading {
 #view-event-details {
   display: block;
   margin: 0 auto;
+}
+
+#block_container
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+#bloc1, #bloc2
+{
+    display:inline;
 }
