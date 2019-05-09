@@ -15,7 +15,7 @@ class AttendeesController < ApplicationController
     @attendee = Attendee.create(attendee_params)
     @event_attendee = EventAttendee.create(event: @event, attendee: @attendee)
     if @attendee.valid?
-      flash[:notice] = "Attendee Created"
+      flash[:notice] = "Attendee Added"
       if @event.attendees
           redirect_to "/events/attendees/new/#{@event.id}"
       else
@@ -38,7 +38,7 @@ class AttendeesController < ApplicationController
     @attendee = Attendee.create(actual_params)
     @afterthought_attendee = AfterthoughtAttendee.create(afterthought:@afterthought,attendee:@attendee)
     if @attendee.valid?
-      flash[:notice] = "Attendee Created"
+      flash[:notice] = "Attendee Added"
 
       if @afterthought.attendees
         redirect_to "/afterthoughts/attendees/new/#{@afterthought.id}"

@@ -25,6 +25,10 @@ class Event < ApplicationRecord
       self.start
     end
 
+    def end_time
+      self.end
+    end
+
   ## CLASS METHODS
 
   ## Events users have created in past 30 days
@@ -75,6 +79,6 @@ class Event < ApplicationRecord
 
 
     ## Instance Methods
-      
+
 
 end
