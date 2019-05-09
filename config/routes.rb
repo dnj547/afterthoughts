@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   ## attendee routes ##
   post '/attendees', to:'attendees#create'
-  get '/attendees/new', to: 'attendees#actual_new'
+  get '/events/attendees/new/:id', to: 'attendees#new'
   post '/attendees', to: 'attendees#actual_create'
 
   ## afterthoughts routes ##
