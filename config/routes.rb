@@ -4,10 +4,13 @@ Rails.application.routes.draw do
   ## analytics routes ##
   get 'analytics', to: 'users#analytics'
 
+  ##events routes##
+  post "/events", to: 'events#create'
+  get "/events/new/:calendar_id/:year/:month/:day", to: 'events#new'
+
   ## attendee routes ##
   post '/attendees', to:'attendees#create'
   get '/events/attendees/new/:id', to: 'attendees#new'
-  post '/attendees', to: 'attendees#actual_create'
   get '/afterthoughts/attendees/new/:id', to: 'attendees#actual_new'
   post '/afterthoughts/attendees/new/:id', to: 'attendees#actual_create'
 
@@ -18,9 +21,6 @@ Rails.application.routes.draw do
   get '/calendars/new/:user_id', to: 'calendars#new'
   post 'calendars', to: 'calendars#create'
 
-  ##events routes##
-  post "/events", to: 'events#create'
-  get "/events/new/:calendar_id/:year/:month/:day", to: 'events#new'
 
 
   ## signup, login, logout routes ##
