@@ -31,9 +31,11 @@ class AfterthoughtsController < ApplicationController
 
     @event = @afterthought.event
     @event_attendees = @event.attendees
-
+  
     ## if attendee is selected, create afterthought_attendee
-    @afterthought_attendees = create_many_afterthought_attendees(@afterthought,@event_attendees)
+
+    @afterthought_attendees_ids = params[:attendee_id]
+    @afterthought_attendees = create_many_afterthought_attendees(@afterthought,@afterthought_attendees_ids)
 
     # @event_attendees =
     # @afterthought_attendee = AfterthoughtAttendee.create(afterthought: @afterthought, attendee: )
