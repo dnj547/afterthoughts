@@ -2,21 +2,25 @@ class AttendeesController < ApplicationController
 
   def new
     @attendee = Attendee.new
-    @event = Event.last
+    @event = Event.find(params[:id])
   end
 
   def create
     @user = current_user
-    @event = Event.last
+    if params.has_key?(:id)
+      @event = Event.find(params[:id])
+    elsif params.has_key?(:event_id)
+      @event = Event.find(params[:event_id])
+    end
     @attendee = Attendee.create(attendee_params)
     @event_attendee = EventAttendee.create(event: @event, attendee: @attendee)
     if @attendee.valid?
       flash[:notice] = "Attendee Created"
       if @event.attendees
-        redirect_to new_attendee_path
+          redirect_to "/events/attendees/new/#{@event.id}"
       else
       redirect_to @event
-    end
+      end
     end
   end
 
@@ -42,7 +46,6 @@ class AttendeesController < ApplicationController
         redirect_to  @afterthought
       end
     end
-
   end
 
 

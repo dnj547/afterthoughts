@@ -6,6 +6,7 @@
         <%= bootstrap_form_for(@attendee, layout: :horizontal) do |f| %>
           <%= f.text_field :name, label_col: "col-sm-2", control_col: "col-sm-10" %>
           <%= f.text_field :notes, label_col: "col-sm-2", control_col: "col-sm-10" %>
+          <%= hidden_field_tag 'event_id', @event.id %>
           <%= f.submit "Add Attendee", class: "btn btn-lg btn-primary" %>
         <% end %>
         <%= link_to "View Event Details", @event, class: "btn btn-lg btn-primary", id: "view-event-details" %>
