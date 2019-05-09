@@ -26,6 +26,24 @@ class Afterthought < ApplicationRecord
     end
 
 
+    ## All words in all afterthoughts
+    def self.all_words_in_all_afterthoughts
+      Afterthought.all.map do |afterthought|
+        afterthought.thoughts
+      end.join(" ").split.to_a
+    end
+
+    def self.most_common_word_in_all_afterthoughts
+      arr = Afterthought.all_words_in_all_afterthoughts
+
+      counts= arr.uniq.map { |x| [x, arr.count(x)] }.to_h
+
+      most_common = counts.max_by do |word,count|
+        count
+      end
+
+      most_common[0]
+    end
 
 
 end
