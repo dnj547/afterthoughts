@@ -1,32 +1,45 @@
-<div class="container">
-  <h1><%=@event.title%></h1>
-  <h2>Event Details</h2>
-  <ul>
-    <li>Calendar: <%= @event.calendar.name %></li>
-    <li>Event: <%= @event.title %></li>
-    <li>Visibility: <%= @event.visibility %></li>
-    <li>Organizer: <%= @event.organizer %></li>
-    <li>Description: <%= @event.description %></li>
-    <li>Location: <%= @event.location %></li>
-    <li>Start: <%= @event.start.strftime("%A, %b %eth, %Y at %l:%M %P ")%></li>
-    <li>End: <%= @event.end.strftime("%A, %b %eth, %Y at %l:%M %P ") %></li>
-    <li>Attendees:
-    <%@event.attendees.each do |attendee|%>
-        <ul><%=attendee.name%><br>
-          <li>Notes: <%=attendee.notes%></li>
-        </ul><br>
-        <%end%>
-      </li>
-  </ul>
-  <br>
-  <%= button_to "Edit Event", "/events/#{@event.id}/edit", method:"get" %>
-  <%= button_to "Delete Event", @event, method:"delete" %>
+<div class="bootstrap-iso">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h1>Event Details</h1>
+        <new-heading><b>Calendar: </b><%= @event.calendar.name.capitalize %></new-heading>
+        <new-heading><b>Event: </b> <%= @event.title.capitalize %></new-heading>
+        <new-heading><b>Visibility: </b> <%= @event.visibility %></new-heading>
+        <new-heading><b>Organizer: </b><%= @event.organizer.capitalize %></new-heading>
+        <new-heading><b>Description: </b><%= @event.description %></new-heading>
+        <new-heading><b>Location: </b><%= @event.location.capitalize %></new-heading>
+        <new-heading><b>Start: </b><%= @event.start.strftime("%A, %b %eth, %Y at %l:%M %P ")%></new-heading>
+        <new-heading><b>End: </b><%= @event.end.strftime("%A, %b %eth, %Y at %l:%M %P ") %></new-heading>
+        <new-heading><b>Attendees: </b></new-heading>
 
-  <% if @event.afterthought == nil %>
-    <%= button_to "Add Afterthought", "/afterthoughts/new/#{@event.id}", method: "get" %>
-  <% else %>
-    <%= button_to "View Afterthought", "/afterthoughts/#{@event.afterthought.id}", method: "get" %>
-  <% end %>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%@event.attendees.each do |attendee|%>
+              <tr>
+                <td><%=attendee.name%></td>
+                <td><%=attendee.notes%></td>
+              </tr>
+            <%end%>
+          </tbody>
+        </table>
 
-  <%= button_to "Add Attendee", "/attendees/new", method: "get" %>
+          <%= link_to "Edit Event", "/events/#{@event.id}/edit", class: "btn btn-lg btn-primary" %>
+          <% if @event.afterthought == nil %>
+          <%= link_to "Add Afterthought", "/afterthoughts/new/#{@event.id}", class: "btn btn-lg btn-primary" %>
+          <% else %>
+          <%= link_to "View Afterthought", "/afterthoughts/#{@event.afterthought.id}", class: "btn btn-lg btn-primary" %>
+          <% end %>
+          <%= link_to "Add Attendee", "/attendees/new", class: "btn btn-lg btn-primary" %>
+          <%= link_to "Delete Event", @event, method:"delete", class: "btn btn-lg btn-danger" %>
+
+      </div>
+    </div>
+  </div>
 </div>
