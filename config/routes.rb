@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
 
+  ## analytics routes ##
+  get 'analytics', to: 'users#analytics'
+
   ## attendee routes ##
   post '/attendees', to:'attendees#create'
 
-
   ## afterthoughts routes ##
   get '/afterthoughts/new/:event_id', to: 'afterthoughts#new'
-
 
   ## calendar routes ##
   get '/calendars/new/:user_id', to: 'calendars#new'
