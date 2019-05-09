@@ -11,7 +11,7 @@
   <li>Thoughts: <%=@afterthought.thoughts%></li>
   <li>Rating: <%=@afterthought.rating%></li>
   <li>Actual Attendees:
-  <%@afterthought.event.attendees.each do |attendee|%>
+  <%@afterthought.attendees.each do |attendee|%>
       <ul>Name: <%=attendee.name%><br>
         Notes: <%=attendee.notes%>
       </ul><br>

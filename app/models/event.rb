@@ -75,6 +75,6 @@ class Event < ApplicationRecord
 
 
     ## Instance Methods
-    
+      
 
 end
