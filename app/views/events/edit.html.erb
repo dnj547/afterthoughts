@@ -11,7 +11,9 @@
           <%= f.text_area :description, label_col: "col-sm-2", control_col: "col-sm-10" %>
           <%= f.datetime_local_field :start, label_col: "col-sm-2", control_col: "col-sm-10" %>
           <%= f.datetime_local_field :end, label_col: "col-sm-2", control_col: "col-sm-10" %>
+
           <%= f.hidden_field(:calendar_id,:value=>@event.calendar.id%>
+
           <%= f.submit "Update Event", class: "btn btn-primary" %>
         <% end %>
 

@@ -79,3 +79,6 @@ gem "simple_calendar", "~> 2.0"
 
 gem 'nested_form_fields'
 gem "bootstrap_form", ">= 4.2.0"
+
+# faker
+gem 'faker', '~> 1.6', '>= 1.6.6'

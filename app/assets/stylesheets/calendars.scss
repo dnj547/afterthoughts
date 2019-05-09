@@ -39,7 +39,26 @@
 
 }
 
-.link_to_event {
+.date_number {
+  margin-top: -10px;
+
+}
+
+.button_to_event {
+  background-color: #B5E9FF;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 0px;
+  box-shadow: 1px 1px 1px black;
+
+}
+.button_to_event:hover {
+  -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    background-color: #84a9b9;
+
 
 }
 

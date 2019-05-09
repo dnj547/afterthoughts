@@ -16,15 +16,15 @@
 
         <div id="calendar_collapsible" class="calendar_collapsible">
           <%= month_calendar events: calendar.events do |date,events| %>
-            <h4><%= date.day %></h4>
+            <div class="date_number">
+              <h4><%= date.day %></h4>
+            </div>
             <div class="link_to_add_event">
-              <%= link_to "Add Event", "/events/new/#{calendar.id}/#{date.year}/#{date.month}/#{date.day}" %>
+              <%= link_to "+", "/events/new/#{calendar.id}/#{date.year}/#{date.month}/#{date.day}" %>
             </div>
             <% events.each do |event| %>
               <% if event.calendar == calendar %>
-               <div class="link_to_event">
-                 <li><%= link_to event.title,  "/events/#{event.id}"%></li>
-               </div>
+                 <a id="button_to_event" class="btn btn-primary" data-method="get" href=<%="/events/#{event.id}"%>><%=event.title%></a>
               <% end %>
             <% end %>
           <% end %>
