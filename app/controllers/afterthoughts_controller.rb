@@ -15,13 +15,28 @@ class AfterthoughtsController < ApplicationController
   def new
     @user = current_user
     @events = @user.events
+    @event = Event.find(params[:event_id])
+    @event_attendees = @event.attendees
+    @afterthought_attendee = AfterthoughtAttendee.new
     @afterthought = Afterthought.new
+
+
   end
 
   def create
     @user = current_user
     @events = @user.events
+
     @afterthought = Afterthought.create(afterthought_params)
+
+    @event = @afterthought.event
+    @event_attendees = @event.attendees
+
+    ## if attendee is selected, create afterthought_attendee
+    @afterthought_attendees = create_many_afterthought_attendees(@afterthought,@event_attendees)
+
+    # @event_attendees =
+    # @afterthought_attendee = AfterthoughtAttendee.create(afterthought: @afterthought, attendee: )
 
     if @afterthought.valid?
       redirect_to @afterthought
@@ -51,10 +66,13 @@ class AfterthoughtsController < ApplicationController
 
   def destroy
     @user = current_user
+
     @afterthought = Afterthought.find(params[:id])
+    @event = @afterthought.event
     @afterthought.destroy
+    flash[:message] = "Afterthought Deleted"
     #we will need to change the redirect: using '@user' just to verify it works
-    redirect_to @user
+    redirect_to @event
   end
 
   private

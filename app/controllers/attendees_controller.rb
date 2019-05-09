@@ -21,6 +21,8 @@ class AttendeesController < ApplicationController
     end
   end
 
+
+
   private
 
   def attendee_params

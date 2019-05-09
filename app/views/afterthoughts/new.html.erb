@@ -12,8 +12,10 @@
   <%= f.datetime_select(:actual_end) %><br>
   <%= f.label "Actual Description: " %>
   <%= f.text_area :actual_description %><br>
+
   <%= f.label "Actual Attendees: " %>
-  <%= f.text_area :actual_description %><br>
+  <%= collection_select(@afterthought_attendee,:attendee_id,@event_attendees,:id,:name)%>
+
   <%= f.label "Thoughts: " %>
   <%= f.text_area :thoughts %><br>
   <%= f.label "Rating: " %>
