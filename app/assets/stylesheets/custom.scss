@@ -29,7 +29,7 @@ textarea {
 /* typography */
 
 h4 {
-  
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -121,7 +121,8 @@ input {
 .btn-primary {
   background: #84a9b9;
   border: 1px solid #000;
-  font-size: 1.5em;
+  font-size: 1.25em;
+  padding: 5px
 }
 
 .btn-primary:hover {
@@ -130,7 +131,8 @@ input {
 
 .btn-danger {
   border: 1px solid #000;
-  font-size: 1.5em;
+  font-size: 1.25em;
+  padding: 5px
 }
 
 .make_one {
@@ -168,6 +170,11 @@ new-heading {
 }
 
 #view-event-details {
+  display: block;
+  margin: 0 auto;
+}
+
+#view-afterthought-details {
   display: block;
   margin: 0 auto;
 }
