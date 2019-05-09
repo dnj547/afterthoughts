@@ -1,32 +1,36 @@
-<div class="container">
-<h1><%=@afterthought.event.title%></h1>
-<%= flash[:message] %>
-<h2>Afterthought Details</h2>
-<ul>
-  <li>Event: <%=@afterthought.event.title%></li>
-  <li>Actual Location: <%=@afterthought.actual_location%></li>
-  <li>Actual Start: <%=@afterthought.actual_start.strftime("%A, %b %eth, %Y at %l:%M %P ")%></li>
-  <li>Actual End: <%=@afterthought.actual_end.strftime("%A, %b %eth, %Y at %l:%M %P ")%></li>
-  <li>Actual Description: <%=@afterthought.actual_description%></li>
-  <li>Thoughts: <%=@afterthought.thoughts%></li>
-  <li>Rating: <%=@afterthought.rating%></li>
-  <li>Actual Attendees:
-  <%@afterthought.attendees.each do |attendee|%>
-      <ul>Name: <%=attendee.name%><br>
-        Notes: <%=attendee.notes%>
-      </ul><br>
-      <%end%>
-    </li>
-</ul>
-
-<br>
-
-<%= button_to "Update this Afterthought", "/afterthoughts/#{@afterthought.id}/edit", method: "get"%>
-
-<%= button_to "Delete this Afterthought", @afterthought, method:"delete" %>
-
-<%= button_to "View Event Details", @afterthought.event,method:"get"%>
-
-<%= button_to "Add Attendee", "/afterthoughts/attendees/new/#{@afterthought.id}", method: "get" %>
-
+<div class="bootstrap-iso">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h1>Afterthought Details for <%= @afterthought.event.title.capitalize %></h1>
+        <new-heading><b>Event: </b><%=@afterthought.event.title%></new-heading>
+        <new-heading><b>Actual Location: </b> <%=@afterthought.actual_location%></new-heading>
+        <new-heading><b>Actual Start: </b> <%=@afterthought.actual_start.strftime("%A, %b %eth, %Y at %l:%M %P ")%></new-heading>
+        <new-heading><b>Actual End: </b><%=@afterthought.actual_end.strftime("%A, %b %eth, %Y at %l:%M %P ")%></new-heading>
+        <new-heading><b>Actual Description: </b><%=@afterthought.actual_description%></new-heading>
+        <new-heading><b>Thoughts: </b><%=@afterthought.thoughts%></new-heading>
+        <new-heading><b>Rating: </b><%=@afterthought.rating%></new-heading>
+        <new-heading><b>Actual Attendees: </b></new-heading>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%@afterthought.attendees.each do |attendee|%>
+              <tr>
+                <td><%=attendee.name%></td>
+                <td><%=attendee.notes%></td>
+              </tr>
+            <%end%>
+          </tbody>
+        </table>
+          <%= link_to "Edit Afterthought", "/afterthoughts/#{@afterthought.id}/edit", class: "btn btn-lg btn-primary" %>
+          <%= link_to "View Event Details", @afterthought.event, class: "btn btn-lg btn-primary" %>
+          <%= link_to "Add Attendee", "/afterthoughts/attendees/new/#{@afterthought.id}", class: "btn btn-lg btn-primary" %>
+      </div>
+    </div>
+  </div>
 </div>
