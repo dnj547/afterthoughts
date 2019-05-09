@@ -4,14 +4,16 @@
     <h1>Calendars</h1>
   </div>
   <% if !@user.calendars.empty? %>
-    <div class="add_calendar">
-      <a class="btn btn-primary" href="/calendars/new/<%= @user.id %>" role="button">Add New Calendar</a>
-    </div>
     <% @calendars.each do |calendar| %>
       <div class= "full_calendar">
-        <div class="calendar_name">
-          <%= calendar.name.capitalize %>
+        <div id="block_container">
+          <div id="bloc1" class="calendar_name"><%= calendar.name.capitalize %></div>
+          <div id="bloc2">
+            <a class="btn btn-primary" href="/calendars/<%= calendar.id %>/edit" role="button">Edit <%= calendar.name %></a>
+          </div>
         </div>
+        <div>
+
         <div id="calendar_collapsible" class="calendar_collapsible">
           <%= month_calendar events: calendar.events do |date,events| %>
             <h4><%= date.day %></h4>
@@ -28,13 +30,13 @@
           <% end %>
           <div class="delete_calendar">
             <a class="btn btn-primary" data-confirm="Are you sure?" data-method="delete" href="/calendars/<%= calendar.id %>" role="button">Delete <%= calendar.name %></a>
-
           </div>
-
         </div>
-
       </div>
     <% end %>
+    <div class="add_calendar">
+      <a class="btn btn-primary" href="/calendars/new/<%= @user.id %>" role="button">Add New Calendar</a>
+    </div>
   <% else %>
     <div class="make_one">
       You don't have any calendars!

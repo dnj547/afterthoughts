@@ -1,11 +1,5 @@
 class AfterthoughtsController < ApplicationController
 
-  def index
-    @user = current_user
-    @user_afterthoughts = @user.afterthoughts
-  end
-
-
   def show
     @user = current_user
     @events = @user.events
@@ -19,19 +13,19 @@ class AfterthoughtsController < ApplicationController
     @event_attendees = @event.attendees
     @afterthought_attendee = AfterthoughtAttendee.new
     @afterthought = Afterthought.new
-
-
+    @afterthought.actual_location = @event.location
+    @afterthought.actual_description = @event.description
+    @afterthought.actual_start = @event.start
+    @afterthought.actual_end = @event.end
   end
 
   def create
     @user = current_user
     @events = @user.events
-
     @afterthought = Afterthought.create(afterthought_params)
-
     @event = @afterthought.event
     @event_attendees = @event.attendees
-  
+
     ## if attendee is selected, create afterthought_attendee
 
     @afterthought_attendees_ids = params[:attendee_id]
@@ -51,13 +45,16 @@ class AfterthoughtsController < ApplicationController
     @user = current_user
     @events = @user.events
     @afterthought = Afterthought.find(params[:id])
+    @event = @afterthought.event
+    @event_attendees = @event.attendees
   end
 
   def update
     @user = current_user
     @afterthought = Afterthought.find(params[:id])
+    @event = @afterthought.event
+    @event_attendees = @event.attendees
     @afterthought.update(afterthought_params)
-
     if @afterthought.valid?
       redirect_to @afterthought
     else

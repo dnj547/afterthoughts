@@ -3,10 +3,11 @@ class ApplicationController < ActionController::Base
 
 
   def create_many_afterthought_attendees(afterthought,attendees_ids)
-  
-    new_attendees_ids =  attendees_ids.reject { |id| id.empty? }
-    new_attendees_ids.each do |attendee_id|
-      AfterthoughtAttendee.create(attendee_id: attendee_id,afterthought_id: afterthought.id)
+    if attendees_ids
+      new_attendees_ids =  attendees_ids.reject { |id| id.empty? }
+      new_attendees_ids.each do |attendee_id|
+        AfterthoughtAttendee.create(attendee_id: attendee_id,afterthought_id: afterthought.id)
+      end
     end
   end
 
