@@ -10,22 +10,45 @@
   <h1><%= Event.total_events_created_past_30_days %></h1>
 
   <h2>Total Afterthoughts created in past 30 days</h2>
-  <h1></h1>
+  <h1><%= Afterthought.total_afterthoughts_created_in_past_30_days%></h1>
 
-
+  <h1><%=link_to "...log in",'/login', method:"get"%> to see more!</h1>
 <% else %>
 
-<h2>Users that have signed up in the past 30 days</h2>
-<ul>
-  <% User.users_signed_up_past_30_day.each do |user|%>
-  <li><h3><%=user.username%></h3></li>
-  <%end%>
-</ul>
+<h2>Total Users that have signed up in the past 30 days</h2>
+  <h1><%= User.total_users_signed_up_past_30_day %></h1>
 
-<h2>Events Users have created in past 30 days</h2>
-  <% Event.events_created_past_30_days.each do |event|%>
-  <li><h3><%= event.title %></h3></li>
+<h2>Total Events created in past 30 days</h2>
+  <h1><%= Event.total_events_created_past_30_days %></h1>
+
+<h2>Total Afterthoughts created in past 30 days</h2>
+  <h1><%= Afterthought.total_afterthoughts_created_in_past_30_days%></h1>
+
+
+<h2>Total Events on Your Calendars</h2>
+  <h1><%= @user.number_of_events_in_my_calendars %></h1>
+
+<h2>Your Total Afterthoughts Created</h2>
+  <h1><%= @user.afterthoughts_count%></h1>
+
+<h2>Your Top 3 Highest Rated Events</h2>
+  <%@user.top_three_rated_events.each do |event|%>
+    <h4><%= event.title %></h4>
   <% end %>
+
+  <h2>Your Bottom 3 Lowest Rated Events</h2>
+    <%@user.bottom_three_rated_events.each do |event|%>
+      <h4><%= event.title %></h4>
+    <% end %>
+
+  <h2>Your Events with the Most Attendees</h2>
+    <h4><%=@user.event_most_attendees.title%> with <%=@user.event_most_attendees_count%> Attendees!</h4>
+
+  <h2>Afterthought with the Longest Thoughts</h2>
+    <h4>Event: <%=@user.afterthought_most_words.event.title%></h4>
+    <h4>Thoughts: <%=@user.afterthought_most_words.thoughts%></h4>
+
+
 <% end %>
 
 

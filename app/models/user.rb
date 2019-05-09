@@ -64,7 +64,7 @@ class User < ApplicationRecord
 
   ## top 3 events by rating
     def top_three_rated_events
-      self.events_by_rating.first(3)
+      self.highest_events_by_rating.first(3)
     end
 
   ## My lowest rated events

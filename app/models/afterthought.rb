@@ -11,14 +11,21 @@ class Afterthought < ApplicationRecord
 
   ## CLASS METHODS
 
-  ## How many afterthoughts created in past 30 days
+  ## Afterthoughts created in past 30 days
     def self.afterthoughts_created_in_past_30_days
       Afterthought.all.select do |afterthought|
         afterthought.created_at >= DateTime.now - 30.day
       end
     end
 
-  
+  ## How many afterthoughts created in past 30 days
+    def self.total_afterthoughts_created_in_past_30_days
+      Afterthought.all.select do |afterthought|
+        afterthought.created_at >= DateTime.now - 30.day
+      end.length
+    end
+
+
 
 
 end
