@@ -14,7 +14,7 @@
   <%= f.text_area :actual_description %><br>
 
   <%= f.label "Actual Attendees: " %>
-  <%= collection_select(@afterthought_attendee,:attendee_id,@event_attendees,:id,:name)%>
+  <%= collection_check_boxes(@test,:attendee_id,@event_attendees,:id,:name)%><br>
 
   <%= f.label "Thoughts: " %>
   <%= f.text_area :thoughts %><br>
