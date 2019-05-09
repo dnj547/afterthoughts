@@ -12,13 +12,15 @@ class CalendarsController < ApplicationController
 
   def edit
     @calendar = Calendar.find(params[:id])
+    @user = current_user
   end
 
   def update
+    @user = current_user
     @calendar = Calendar.find(params[:id])
     if @calendar.update(calendar_params)
       flash[:notice] = "Calendar Successfully Updated!"
-     redirect_to calendar_path(@calendar)
+     redirect_to @user
    else
      flash[:alert] = @calendar.errors.full_messages
      render :edit
