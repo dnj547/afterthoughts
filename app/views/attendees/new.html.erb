@@ -1,15 +1,15 @@
-<div class="container">
-
-<h1>Add Attendee to <%= @event.title %></h1>
-
-<%= form_for @attendee do |f| %>
-
-  <%= f.label "Name: " %>
-  <%= f.text_field :name %><br>
-  <%= f.label "Notes: " %>
-  <%= f.text_field :notes %><br>
-  <%= f.submit "Add Attendee!" %>
-<% end %>
-
-  <%= button_to "View Event Details", @event, method: "get" %>
+<div class="bootstrap-iso">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h1>Add An Attendee to <%= @event.title %></h1><br>
+        <%= bootstrap_form_for(@attendee, layout: :horizontal) do |f| %>
+          <%= f.text_field :name, label_col: "col-sm-2", control_col: "col-sm-10" %>
+          <%= f.text_field :notes, label_col: "col-sm-2", control_col: "col-sm-10" %>
+          <%= f.submit "Add Attendee", class: "btn btn-lg btn-primary" %>
+        <% end %>
+        <%= link_to "View Event Details", @event, class: "btn btn-lg btn-primary", id: "view-event-details" %>
+      </div>
+    </div>
+  </div>
 </div>
