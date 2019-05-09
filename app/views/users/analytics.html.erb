@@ -1,0 +1,33 @@
+<div class="container">
+<h1>Analytics!</h1>
+
+<% if !logged_in? %>
+
+  <h2>Total Users that have signed up in the past 30 days</h2>
+    <h1><%= User.total_users_signed_up_past_30_day %></h1>
+
+  <h2>Total Events created in past 30 days</h2>
+  <h1><%= Event.total_events_created_past_30_days %></h1>
+
+  <h2>Total Afterthoughts created in past 30 days</h2>
+  <h1></h1>
+
+
+<% else %>
+
+<h2>Users that have signed up in the past 30 days</h2>
+<ul>
+  <% User.users_signed_up_past_30_day.each do |user|%>
+  <li><h3><%=user.username%></h3></li>
+  <%end%>
+</ul>
+
+<h2>Events Users have created in past 30 days</h2>
+  <% Event.events_created_past_30_days.each do |event|%>
+  <li><h3><%= event.title %></h3></li>
+  <% end %>
+<% end %>
+
+
+
+</div>

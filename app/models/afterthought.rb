@@ -8,4 +8,17 @@ class Afterthought < ApplicationRecord
   validates :actual_end, presence: true
   validates :rating, presence: true
 
+
+  ## CLASS METHODS
+
+  ## How many afterthoughts created in past 30 days
+    def self.afterthoughts_created_in_past_30_days
+      Afterthought.all.select do |afterthought|
+        afterthought.created_at >= DateTime.now - 30.day
+      end
+    end
+
+  
+
+
 end

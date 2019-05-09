@@ -12,18 +12,50 @@ class Event < ApplicationRecord
   validates :end, presence: true
   validate :validates_start
 
-  def validates_start
-    return if self.end.blank? || self.start.blank?
-    if self.start > self.end
-      errors.add(:end, "date/time must be after start date/time")
+  ## custom validations
+    def validates_start
+      return if self.end.blank? || self.start.blank?
+      if self.start > self.end
+        errors.add(:end, "date/time must be after start date/time")
+      end
     end
-  end
 
+  ## methods for easier calendar functionality
+    def start_time
+      self.start
+    end
 
-  ##methods for easier calendar functionality
-  def start_time
-    self.start
-  end
+  ## CLASS METHODS
+
+  ## Events users have created in past 30 days
+    def self.events_created_past_30_days
+      Event.all.select do |event|
+        event.created_at >= DateTime.now - 30.day
+      end
+    end
+
+  ## How many events users have created in past 30 days
+    def self.total_events_created_past_30_days
+      Event.all.select do |event|
+        event.created_at >= DateTime.now - 30.day
+      end.length
+    end
+
+  ## All events in past 30 dayss
+    def self.events_in_past_30_days
+      Event.all.select do |event|
+        event.start >= DateTime.now - 30.day
+      end
+    end
+
+  ## Average rating of all events in past 30 days
+    def self.average_rating_events_in_past_30_days
+      Event.events_in_past_30_days.map do |event|
+        if event.afterthought
+          event.afterthought.rating
+        end
+      end
+    end
 
 
 
