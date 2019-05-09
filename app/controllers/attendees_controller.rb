@@ -21,6 +21,18 @@ class AttendeesController < ApplicationController
     end
   end
 
+  def actual_new
+    @user = current_user
+    @attendee = Attendee.new
+    @afterthought =
+
+
+  end
+
+  def actual_create
+    @user = current_user
+
+  end
 
 
   private
