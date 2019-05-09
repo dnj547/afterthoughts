@@ -75,6 +75,7 @@ gem "simple_calendar", "~> 2.0"
 
 
 #datepicker
-gem 'bootstrap-datepicker-rails'
+# gem 'bootstrap-datepicker-rails'
 
 gem 'nested_form_fields'
+gem "bootstrap_form", ">= 4.2.0"

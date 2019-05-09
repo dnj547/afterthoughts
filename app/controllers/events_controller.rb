@@ -2,12 +2,18 @@ class EventsController < ApplicationController
 
   def show
     @user = current_user
-    @event = Event.find(params[:id])
+    if Event.exists?(params[:id])
+      @event = Event.find(params[:id])
+    else
+      redirect_to @user
+    end
   end
 
   def new
     @user = current_user
     @event = Event.new
+    @event.start = DateTime.new(params[:year].to_i,params[:month].to_i,params[:day].to_i)
+    @event.end = DateTime.new(params[:year].to_i,params[:month].to_i,params[:day].to_i)
     @user_calendars = @user.calendars
     @attendee = Attendee.new
   end
@@ -17,10 +23,11 @@ class EventsController < ApplicationController
     @user_calendars = @user.calendars
     @event = Event.create(event_params)
     if @event.valid?
-      flash[:message] = "Event Created"
+      flash[:notice] = "Event Created"
       redirect_to new_attendee_path
     else
-      flash[:message] = @event.errors.full_messages
+      flash[:alert] = @event.errors.full_messages
+      render :new
     end
   end
 
@@ -37,10 +44,10 @@ class EventsController < ApplicationController
     @event.update(event_params)
 
     if @event.valid?
-      flash[:message] = "Event Updated!"
+      flash[:notice] = "Event Updated!"
       redirect_to @event
     else
-      flash[:message] = @event.errors.full_messages
+      flash[:alert] = @event.errors.full_messages
       render :edit
     end
   end
@@ -49,7 +56,7 @@ class EventsController < ApplicationController
     @user = current_user
     @event = Event.find(params[:id])
     @event.destroy
-    flash[:message] = "Event Deleted!"
+    flash[:notice] = "Event Deleted!"
     redirect_to @user
   end
 

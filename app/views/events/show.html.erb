@@ -1,33 +1,26 @@
 <div class="container">
   <h1><%=@event.title%></h1>
-
-
-<h2>Event Details</h2>
-<ul>
-  <li>Calendar: <%= @event.calendar.name %></li>
-  <li>Event: <%= @event.title %></li>
-  <li>Visibility: <%= @event.visibility %></li>
-  <li>Organizer: <%= @event.organizer %></li>
-  <li>Description: <%= @event.description %></li>
-  <li>Location: <%= @event.location %></li>
-  <li>Start: <%= @event.start.strftime("%A, %b %eth, %Y at %l:%M %P ")%></li>
-  <li>End: <%= @event.end.strftime("%A, %b %eth, %Y at %l:%M %P ") %></li>
-  <li>Attendees:
-  <%@event.attendees.each do |attendee|%>
-      <ul><%=attendee.name%><br>
-        <li>Notes: <%=attendee.notes%></li>
-      </ul><br>
-      <%end%>
-    </li>
-</ul>
-
-
+  <h2>Event Details</h2>
+  <ul>
+    <li>Calendar: <%= @event.calendar.name %></li>
+    <li>Event: <%= @event.title %></li>
+    <li>Visibility: <%= @event.visibility %></li>
+    <li>Organizer: <%= @event.organizer %></li>
+    <li>Description: <%= @event.description %></li>
+    <li>Location: <%= @event.location %></li>
+    <li>Start: <%= @event.start.strftime("%A, %b %eth, %Y at %l:%M %P ")%></li>
+    <li>End: <%= @event.end.strftime("%A, %b %eth, %Y at %l:%M %P ") %></li>
+    <li>Attendees:
+    <%@event.attendees.each do |attendee|%>
+        <ul><%=attendee.name%><br>
+          <li>Notes: <%=attendee.notes%></li>
+        </ul><br>
+        <%end%>
+      </li>
+  </ul>
   <br>
-
   <%= button_to "Edit Event", "/events/#{@event.id}/edit", method:"get" %>
-
   <%= button_to "Delete Event", @event, method:"delete" %>
-
 
   <% if @event.afterthought == nil %>
     <%= button_to "Add Afterthought", "/afterthoughts/new/#{@event.id}", method: "get" %>
@@ -37,4 +30,3 @@
 
   <%= button_to "Add Attendee", "/attendees/new", method: "get" %>
 </div>
-
