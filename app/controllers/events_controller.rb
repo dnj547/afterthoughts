@@ -10,12 +10,12 @@ class EventsController < ApplicationController
   end
 
   def new
-
     @user = current_user
     @event = Event.new
     @event.start = DateTime.new(params[:year].to_i,params[:month].to_i,params[:day].to_i)
     @event.end = DateTime.new(params[:year].to_i,params[:month].to_i,params[:day].to_i)
-    @user_calendars = @user.calendars
+    # @user_calendars = @user.calendars
+    @calendar = Calendar.find(params[:calendar_id])
     @attendee = Attendee.new
   end
 
@@ -64,7 +64,7 @@ class EventsController < ApplicationController
 
 
   def new_auto
-    @calender = Calendar.find(params[:calendar_id])
+    @calendar = Calendar.find(params[:calendar_id])
     @event = Event.new
     @event.title = "Mother's Day Dinner"
     @event.location = "Mom and Dad's House"
