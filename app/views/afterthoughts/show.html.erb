@@ -29,8 +29,9 @@
         </table>
           <%= link_to "Edit Afterthought", "/afterthoughts/#{@afterthought.id}/edit", class: "btn btn-lg btn-primary" %>
           <%= link_to "View Event Details", @afterthought.event, class: "btn btn-lg btn-primary" %>
+          <%= link_to "View Event with Afterthought", "/events/#{@afterthought.event.id}/event_afterthought", class: "btn btn-lg btn-primary" %>
           <%= link_to "Add Attendee", "/afterthoughts/attendees/new/#{@afterthought.id}", class: "btn btn-lg btn-primary" %>
-            <%= link_to "Delete Afterthought", @afterthought, method:"delete", class: "btn btn-lg btn-danger" %>
+          <%= link_to "Delete Afterthought", @afterthought, method:"delete", class: "btn btn-lg btn-danger" %>
       </div>
     </div>
   </div>

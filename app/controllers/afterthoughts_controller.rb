@@ -56,7 +56,7 @@ class AfterthoughtsController < ApplicationController
     @event = @afterthought.event
     @event_attendees = @event.attendees
     @afterthought.update(afterthought_params)
-    byebug
+  
     if @afterthought.valid?
       flash[:notice] = "Afterthought Updated!"
       redirect_to @afterthought
