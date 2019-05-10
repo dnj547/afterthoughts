@@ -50,11 +50,13 @@ class AfterthoughtsController < ApplicationController
   end
 
   def update
+
     @user = current_user
     @afterthought = Afterthought.find(params[:id])
     @event = @afterthought.event
     @event_attendees = @event.attendees
     @afterthought.update(afterthought_params)
+    byebug
     if @afterthought.valid?
       redirect_to @afterthought
     else
