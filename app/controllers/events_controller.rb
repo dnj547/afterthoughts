@@ -62,6 +62,24 @@ class EventsController < ApplicationController
     redirect_to @user
   end
 
+
+  def new_auto
+    @calender = Calendar.find(params[:calendar_id])
+    @event = Event.new
+    @event.title = "Mother's Day Dinner"
+    @event.location = "Mom and Dad's House"
+    @event.organizer = "Dad"
+    @event.description = "A lovely evening with the family to celebrate Mother's Day"
+    @event.start = DateTime.new(2019,05,12, 16)
+    @event.end = DateTime.new(2019,05,12, 20)
+  end
+
+  def event_afterthought
+    @user = current_user
+    @event = Event.find(params[:id])
+    @afterthought = @event.afterthought
+  end
+
   private
   def event_params
     params.require(:event).permit(:calendar_id,:visibility,:organizer,:title,:description,:start,:end,:location,:afterthought_id)

@@ -34,6 +34,7 @@
           <%= link_to "Add Afterthought", "/afterthoughts/new/#{@event.id}", class: "btn btn-lg btn-primary" %>
           <% else %>
           <%= link_to "View Afterthought", "/afterthoughts/#{@event.afterthought.id}", class: "btn btn-lg btn-primary" %>
+          <%= link_to "View Event with Afterthought", "/events/#{@event.id}/event_afterthought", class: "btn btn-lg btn-primary" %>
           <% end %>
           <%= link_to "Add Attendee", "/events/attendees/new/#{@event.id}", class: "btn btn-lg btn-primary" %>
           <%= link_to "Delete Event", @event, method:"delete", class: "btn btn-lg btn-danger" %>

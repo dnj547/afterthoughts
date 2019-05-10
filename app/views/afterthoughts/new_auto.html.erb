@@ -1,0 +1,22 @@
+<div class="bootstrap-iso">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h1>Add An Afterthought to <%= @event.title.capitalize %></h1><br>
+        <h2>What really happened at this event?</h2>
+        <%= bootstrap_form_for(@afterthought, layout: :horizontal) do |f| %>
+          <%= f.hidden_field(:event_id,:value=>params[:event_id])%>
+          <%= f.text_field :actual_location, label_col: "col-sm-2", control_col: "col-sm-10"%>
+          <%= f.text_area :actual_description, label_col: "col-sm-2", control_col: "col-sm-10" %>
+          <%= f.datetime_local_field :actual_start, label_col: "col-sm-2", control_col: "col-sm-10" %>
+          <%= f.datetime_local_field :actual_end, label_col: "col-sm-2", control_col: "col-sm-10" %>
+          <%= f.collection_check_boxes :attendees, @event_attendees, :id, :name, label_col: "col-sm-2", control_col: "col-sm-10" %>
+          <%= f.text_area :thoughts, label_col: "col-sm-2", control_col: "col-sm-10"  %>
+          <%= f.number_field :rating, max: 5, label_col: "col-sm-2", control_col: "col-sm-10"  %>
+          <%= f.submit "Add Afterthought", class: "btn btn-primary" %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
