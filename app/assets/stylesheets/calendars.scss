@@ -47,46 +47,43 @@
 }
 
 .add-event-plus {
-  background-color: #B5E9FF;
-  display: inline;
-  // width: 5%;
-  // height: 5%;
-  border-style: solid;
-  border-color: #84A9B7;
-  border-width: thin;
-  border-radius: 5px;
-  box-shadow: 2px 2px 2px lightgrey;
-  // text-align: center;
+  visibility: hidden;
+}
 
+.add-event-plus:after {
+  content: "+";
+  visibility: visible;
+  display: block;
+  position: absolute;
+  margin-top: -10px;
 }
 
 .add-event-plus:hover {
-  -webkit-transition-duration: 0.4s; /* Safari */
-      transition-duration: 0.2s;
+  -webkit-transition-duration: 0.1s; /* Safari */
+      transition-duration: 0.1s;
       background-color: #69D2FF;
-
 }
 
 
 
 #button_to_event {
-  background-color: #B5E9FF;
-  border-style: solid;
-  border-width: thin;
-  border-radius: 5px;
-  margin: 10px;
+  background-color: #84a9b9;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin-left: -8px;
+  margin-right: -8px;
   padding: 1px;
-  box-shadow: 1px 1px 1px black;
   text-decoration: none;
-  // position: static;
-
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex;
 }
+
 #button_to_event:hover {
-  -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    background-color: #69D2FF;
-
-
+  -webkit-transition-duration: 0.1s; /* Safari */
+    transition-duration: 0.1s;
+    background-color: gray;
 }
 
 .user_name {

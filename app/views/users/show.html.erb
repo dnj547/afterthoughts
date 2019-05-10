@@ -22,13 +22,13 @@
               <h4><%= date.day %></h4>
             </div>
 
-          <%= link_to "+", "/events/new/#{calendar.id}/#{date.year}/#{date.month}/#{date.day}", class: "btn add-event-plus" %>
+          <%= link_to "", "/events/new/#{calendar.id}/#{date.year}/#{date.month}/#{date.day}", class: "btn add-event-plus" %>
 
           </div>
 
             <% events.each do |event| %>
               <% if event.calendar == calendar %>
-                 <a id="button_to_event" class="event-on-cal" data-method="get" href=<%="/events/#{event.id}"%>><%=event.title%></a>
+                 <a id="button_to_event" class="" data-method="get" href=<%="/events/#{event.id}"%>><%=event.title%></a>
               <% end %>
             <% end %>
           <% end %>
