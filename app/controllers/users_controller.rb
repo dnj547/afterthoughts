@@ -10,6 +10,9 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @user.username = Faker::Pokemon.name
+    @user.password = "123456"
+    @user.password_confirmation = "123456"
   end
 
   def create
