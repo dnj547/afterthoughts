@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    @calendar = Calendar.create(user:@user,name:"#{@user.username}")
+    @calendar = Calendar.create(user:@user,name:"My First Calendar")
     if @user.valid?
       log_in @user
       flash[:success] = "Welcome to Afterthoughts!"
