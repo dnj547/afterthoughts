@@ -8,7 +8,7 @@
         <%= bootstrap_form_for(@calendar, layout: :horizontal) do |f| %>
           <%= f.text_field :name, label_col: "col-sm-2", control_col: "col-sm-10" %>
           <%= f.hidden_field(:user_id, :value=>@calendar.user.id) %>
-          <%= f.submit "Update Calendar", class: "btn btn-primary" %>
+          <%= f.submit "Update Calendar", class: "btn btn-primary update" %>
         <% end %>
       </div>
     </div>

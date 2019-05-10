@@ -1,9 +1,11 @@
 class SessionsController < ApplicationController
 
   def new
+    flash.clear
   end
 
   def create
+    flash.clear
     user = User.find_by(username: params[:session][:username])
     if user && user.authenticate(params[:session][:password])
       log_in user

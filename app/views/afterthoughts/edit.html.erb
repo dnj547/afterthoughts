@@ -15,7 +15,7 @@
           <%= f.collection_check_boxes :attendees, @event_attendees, :id, :name, label_col: "col-sm-2", control_col: "col-sm-10" %>
           <%= f.text_area :thoughts, label_col: "col-sm-2", control_col: "col-sm-10"  %>
           <%= f.number_field :rating, max: 5, label_col: "col-sm-2", control_col: "col-sm-10"  %>
-          <%= f.submit "Update Afterthought", class: "btn btn-primary" %>
+          <%= f.submit "Update Afterthought", class: "btn btn-primary create" %>
         <% end %>
       </div>
     </div>

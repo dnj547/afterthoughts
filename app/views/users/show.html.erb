@@ -1,10 +1,9 @@
-
 <% provide(:title, @user.username) %>
 <div class="container">
-  <div class="user_name">
-    <h1>Calendars</h1>
-  </div>
   <% if !@user.calendars.empty? %>
+    <div class="user_name">
+      <h1>Calendars</h1>
+    </div>
     <% @calendars.each do |calendar| %>
       <div class= "full_calendar">
         <div id="block_container">
@@ -19,7 +18,6 @@
           <%= month_calendar events: calendar.events do |date,events| %>
           <div class="date-number-and-plus">
 
-
             <div class="date_number">
               <h4><%= date.day %></h4>
             </div>
@@ -28,11 +26,9 @@
 
           </div>
 
-
-
             <% events.each do |event| %>
               <% if event.calendar == calendar %>
-                 <a id="button_to_event" class="" data-method="get" href=<%="/events/#{event.id}"%>><%=event.title%></a>
+                 <a id="button_to_event" class="event-on-cal" data-method="get" href=<%="/events/#{event.id}"%>><%=event.title%></a>
               <% end %>
             <% end %>
           <% end %>

@@ -9,9 +9,9 @@
           <%= f.text_field :name, label_col: "col-sm-2", control_col: "col-sm-10" %>
           <%= f.text_field :notes, label_col: "col-sm-2", control_col: "col-sm-10" %>
           <%= hidden_field_tag 'event_id', @event.id %>
-          <%= f.submit "Add Attendee", class: "btn btn-lg btn-primary" %>
+          <%= f.submit "Add Attendee", class: "btn btn-lg btn-primary create" %>
         <% end %>
-        <%= link_to "View Afterthought Details", @afterthought, class: "btn btn-lg btn-primary", id: "view-afterthought-details" %>
+        <%= link_to "View Afterthought Details", @afterthought, class: "btn btn-lg btn-primary create", id: "view-afterthought-details" %>
       </div>
     </div>
   </div>
