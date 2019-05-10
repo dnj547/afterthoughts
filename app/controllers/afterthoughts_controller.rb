@@ -27,7 +27,6 @@ class AfterthoughtsController < ApplicationController
     @event_attendees = @event.attendees
 
     ## if attendee is selected, create afterthought_attendee
-
     @afterthought_attendees_ids = params[:afterthought][:attendees]
     @afterthought_attendees = create_many_afterthought_attendees(@afterthought,@afterthought_attendees_ids)
 
@@ -35,8 +34,10 @@ class AfterthoughtsController < ApplicationController
     # @afterthought_attendee = AfterthoughtAttendee.create(afterthought: @afterthought, attendee: )
 
     if @afterthought.valid?
+      flash[:notice] = "Afterthought Added!"
       redirect_to @afterthought
     else
+      flash[:alert] = @afterthought.errors.full_messages
       render :new
     end
   end
@@ -50,7 +51,6 @@ class AfterthoughtsController < ApplicationController
   end
 
   def update
-
     @user = current_user
     @afterthought = Afterthought.find(params[:id])
     @event = @afterthought.event
@@ -58,8 +58,10 @@ class AfterthoughtsController < ApplicationController
     @afterthought.update(afterthought_params)
     byebug
     if @afterthought.valid?
+      flash[:notice] = "Afterthought Updated!"
       redirect_to @afterthought
     else
+      flash[:alert] = @afterthought.errors.full_messages
       render :edit
     end
 
@@ -71,7 +73,7 @@ class AfterthoughtsController < ApplicationController
     @afterthought = Afterthought.find(params[:id])
     @event = @afterthought.event
     @afterthought.destroy
-    flash[:message] = "Afterthought Deleted"
+    flash[:notice] = "Afterthought Deleted!"
     #we will need to change the redirect: using '@user' just to verify it works
     redirect_to @event
   end
