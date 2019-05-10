@@ -4,7 +4,7 @@ class Attendee < ApplicationRecord
   has_many :events, through: :event_attendees
   has_many :afterthoughts, through: :afterthought_attendees
 
-  validates :name, length: {maximum: 30}
-  
+  validates :name, presence: true, length: {maximum: 30}
+
 
 end
