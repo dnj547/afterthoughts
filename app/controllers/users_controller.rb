@@ -20,6 +20,7 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome to Afterthoughts!"
       redirect_to @user
     else
+      flash[:alert] = @user.errors.full_messages
       render :new
     end
   end
