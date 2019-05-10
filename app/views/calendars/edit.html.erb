@@ -1,11 +1,16 @@
-<div class="container">
-  <h1>Editing <%= @calendar.name %></h1>
+<% @thing = @calendar %>
 
-  <%= form_for @calendar do |f| %>
-    <%= f.label "name" %>
-    <%= f.text_field :name %><br>
-    <%= f.hidden_field(:user_id, :value=>@user.id) %>
-    <%= f.submit "Update Calendar" %>
-
-  <% end %>
+<div class="bootstrap-iso">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h1>Editing <%= @calendar.name.capitalize %></h1>
+        <%= bootstrap_form_for(@calendar, layout: :horizontal) do |f| %>
+          <%= f.text_field :name, label_col: "col-sm-2", control_col: "col-sm-10" %>
+          <%= f.hidden_field(:user_id, :value=>@calendar.user.id) %>
+          <%= f.submit "Update Calendar", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
