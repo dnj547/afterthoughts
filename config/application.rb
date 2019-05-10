@@ -18,6 +18,9 @@ module Afterthoughts
 
     ##sets beginning of week to Sunday instead of Monday
     config.beginning_of_week = :sunday
+
+    ## sets time zone
+    config.time_zone = 'Etc/UTC'
   end
 end
 

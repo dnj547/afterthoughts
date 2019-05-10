@@ -192,3 +192,16 @@ new-heading {
 {
     display:inline;
 }
+
+.event_afterthought {
+  display: flex;
+  justify-content: space-between;
+}
+
+.event_afterthought_event {
+  width: 100%;
+}
+
+.event_afterthought_afterthought {
+  width: 100%;
+}

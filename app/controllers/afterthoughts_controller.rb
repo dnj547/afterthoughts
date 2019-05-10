@@ -28,7 +28,7 @@ class AfterthoughtsController < ApplicationController
 
     ## if attendee is selected, create afterthought_attendee
 
-    @afterthought_attendees_ids = params[:attendee_id]
+    @afterthought_attendees_ids = params[:afterthought][:attendees]
     @afterthought_attendees = create_many_afterthought_attendees(@afterthought,@afterthought_attendees_ids)
 
     # @event_attendees =
@@ -72,6 +72,11 @@ class AfterthoughtsController < ApplicationController
     flash[:message] = "Afterthought Deleted"
     #we will need to change the redirect: using '@user' just to verify it works
     redirect_to @event
+  end
+
+  def new_auto
+
+
   end
 
   private
