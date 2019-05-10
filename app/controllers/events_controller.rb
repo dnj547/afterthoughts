@@ -24,7 +24,7 @@ class EventsController < ApplicationController
     @user_calendars = @user.calendars
     @event = Event.create(event_params)
     if @event.valid?
-      flash[:notice] = "Event Created"
+      flash[:notice] = "Event Created!"
       redirect_to "/events/attendees/new/#{@event.id}"
     else
       flash[:alert] = @event.errors.full_messages
