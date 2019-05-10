@@ -190,7 +190,7 @@ new-heading {
 
 #bloc1, #bloc2
 {
-    display:inline;
+  display:inline;
 }
 
 .event_afterthought {
@@ -206,6 +206,12 @@ new-heading {
   width: 100%;
 }
 
-.login-alert {
-  background: red !important;
+.event-on-cal {
+  background: red;
+}
+
+.auto, .create, .update {
+  display: block;
+  max-width: 200px;
+  margin: auto;
 }

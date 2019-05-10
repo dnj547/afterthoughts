@@ -15,7 +15,14 @@
           <%= f.collection_check_boxes :attendees, @event_attendees, :id, :name, label_col: "col-sm-2", control_col: "col-sm-10" %>
           <%= f.text_area :thoughts, label_col: "col-sm-2", control_col: "col-sm-10"  %>
           <%= f.number_field :rating, max: 5, label_col: "col-sm-2", control_col: "col-sm-10"  %>
-          <%= f.submit "Add Afterthought", class: "btn btn-primary" %>
+          <%= f.form_group :rating, label: { text: "Rating" }, class: "radio inline" do %>
+            <%= f.radio_button :rating, 1, label: "Awful", inline: true %>
+            <%= f.radio_button :rating, 2, label: "Not good", inline: true %>
+            <%= f.radio_button :rating, 3, label: "Meh", inline: true %>
+            <%= f.radio_button :rating, 4, label: "Good", inline: true %>
+            <%= f.radio_button :rating, 5, label: "Awesome", inline: true %>
+          <% end %>
+          <%= f.submit "Add Afterthought", class: "btn btn-primary create" %>
         <% end %>
 
       </div>
