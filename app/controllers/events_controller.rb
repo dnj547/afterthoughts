@@ -10,7 +10,7 @@ class EventsController < ApplicationController
   end
 
   def new
-    
+
     @user = current_user
     @event = Event.new
     @event.start = DateTime.new(params[:year].to_i,params[:month].to_i,params[:day].to_i)
