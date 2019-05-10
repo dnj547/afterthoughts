@@ -1,5 +1,5 @@
 <div class="bootstrap-iso">
-  <div class="container-fluid">
+  <div class="container-fluid cont">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h1>Afterthought Details for <%= @afterthought.event.title.capitalize %></h1>
@@ -9,7 +9,19 @@
         <new-heading><b>Actual End: </b><%=@afterthought.actual_end.strftime("%A, %b %eth, %Y at %l:%M %P ")%></new-heading>
         <new-heading><b>Actual Description: </b><%=@afterthought.actual_description%></new-heading>
         <new-heading><b>Thoughts: </b><%=@afterthought.thoughts%></new-heading>
-        <new-heading><b>Rating: </b><%=@afterthought.rating%></new-heading>
+        <new-heading><b>Rating: </b>
+          <% if @afterthought.rating == 1 %>
+            <%="Awful"%>
+          <% elsif @afterthought.rating == 2 %>
+            <%="Not good"%>
+          <% elsif @afterthought.rating == 3 %>
+            <%="Meh"%>
+          <% elsif @afterthought.rating == 4 %>
+            <%="Good"%>
+          <% elsif @afterthought.rating == 5 %>
+            <%="Awesome"%>
+          <% end %>
+        </new-heading>
         <new-heading><b>Actual Attendees: </b></new-heading>
         <table class="table">
           <thead>
