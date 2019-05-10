@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h1>Add an Attendee to <%= @event.title %>'s Afterthought</h1><br>
-        <%= bootstrap_form_for(@attendee, layout: :horizontal) do |f| %>
+        <%= bootstrap_form_for('/afterthoughts/attendees', layout: :horizontal) do |f| %>
           <%= f.text_field :name, label_col: "col-sm-2", control_col: "col-sm-10" %>
           <%= f.text_field :notes, label_col: "col-sm-2", control_col: "col-sm-10" %>
           <%= hidden_field_tag 'event_id', @event.id %>
