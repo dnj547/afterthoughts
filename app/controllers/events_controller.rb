@@ -66,12 +66,16 @@ class EventsController < ApplicationController
   def new_auto
     @calendar = Calendar.find(params[:calendar_id])
     @event = Event.new
-    @event.title = "Mother's Day Dinner"
-    @event.location = "Mom and Dad's House"
-    @event.organizer = "Dad"
-    @event.description = "A lovely evening with the family to celebrate Mother's Day"
-    @event.start = DateTime.new(2019,05,12, 16)
-    @event.end = DateTime.new(2019,05,12, 20)
+    @event.title = Faker::Hipster.word.capitalize
+    # "Mother's Day Dinner"
+    @event.location = "#{Faker::Address.street_address}, Brooklyn, NY"
+    # "Mom and Dad's House"
+    @event.organizer = Faker::Name.first_name
+    # "Dad"
+    @event.description = Faker::Hipster.paragraph
+    # "A lovely evening with the family to celebrate Mother's Day"
+    @event.start = DateTime.new(params[:year].to_i,params[:month].to_i,params[:day].to_i)
+    @event.end = DateTime.new(params[:year].to_i,params[:month].to_i,params[:day].to_i)
   end
 
   def event_afterthought
