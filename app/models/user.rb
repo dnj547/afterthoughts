@@ -142,11 +142,15 @@ class User < ApplicationRecord
       end
     ## Average rating of all events in past 30 days
       def my_average_rating_events_in_past_30_days
-        total = 0
-        self.my_rating_of_all_events_in_past_30_days.each do |rating|
-          total += rating
+        if self.my_rating_of_all_events_in_past_30_days != []
+          total = 0
+          self.my_rating_of_all_events_in_past_30_days.each do |rating|
+            total += rating
+          end
+          total / (self.my_rating_of_all_events_in_past_30_days.length)
+        else
+          "You have no events"
         end
-        total / (self.my_rating_of_all_events_in_past_30_days.length)
       end
 
 
