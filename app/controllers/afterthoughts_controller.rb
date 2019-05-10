@@ -20,13 +20,11 @@ class AfterthoughtsController < ApplicationController
   end
 
   def create
-    byebug
     @user = current_user
     @events = @user.events
     @afterthought = Afterthought.create(afterthought_params)
     @event = @afterthought.event
     @event_attendees = @event.attendees
-    byebug
 
     ## if attendee is selected, create afterthought_attendee
 
@@ -77,7 +75,7 @@ class AfterthoughtsController < ApplicationController
   end
 
   def new_auto
-    
+
 
   end
 

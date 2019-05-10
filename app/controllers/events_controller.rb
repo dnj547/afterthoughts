@@ -35,7 +35,6 @@ class EventsController < ApplicationController
     @user = current_user
     @user_calendars = @user.calendars
     @event = Event.find(params[:id])
-    byebug
   end
 
   def update
