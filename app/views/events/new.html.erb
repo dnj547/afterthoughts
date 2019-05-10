@@ -4,7 +4,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <%=button_to "Auto Populate!", "/events/new_auto/#{@calendar.id}", method:"get" %>
+        <%=button_to "Auto Populate!", "/events/new_auto/#{@calendar.id}/#{params[:year]}/#{params[:month]}/#{params[:day]}", method:"get" %>
         <h1>Add An Event</h1><br>
 
         <%= bootstrap_form_for(@event, layout: :horizontal) do |f| %>

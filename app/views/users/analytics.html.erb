@@ -33,20 +33,20 @@
             <h1><%= @user.afterthoughts_count%></h1>
           <h2>Your Top 3 Highest Rated Events</h2>
             <%@user.top_three_rated_events.each do |event|%>
-              <h4><%= event.title %></h4>
+              <h1><%= event.title %></h1>
             <% end %>
           <h2>Your Bottom 3 Lowest Rated Events</h2>
             <%@user.bottom_three_rated_events.each do |event|%>
-              <h4><%= event.title %></h4>
+              <h1><%= event.title %></h1>
             <% end %>
           <h2>Afterthought with the Longest Thoughts</h2>
-            <h4>Event: <%=@user.afterthought_most_words.event.title%></h4>
-            <h4>Thoughts: <%=@user.afterthought_most_words.thoughts%></h4>
+            <h1>Event:  <%=@user.afterthought_most_words.event.title%></h1>
+            <h1>Thoughts:  <%=@user.afterthought_most_words.thoughts%></h1>
 
           <h2>Most Common Word in All Afterthoughts</h2>
-            <h4><%=Afterthought.most_common_word_in_all_afterthoughts%></h4>
+            <h1><%=Afterthought.most_common_word_in_all_afterthoughts%></h1>
           <h2>Most Common Word in Your Afterthoughts</h2>
-            <h4><%=@user.most_common_word_in_afterthoughts%></h4>
+            <h1><%=@user.most_common_word_in_afterthoughts%></h1>
 
           <h2>Average Rating of All Events in the Past 30 Days</h2>
             <h1><%=Event.average_rating_events_in_past_30_days%></h1>

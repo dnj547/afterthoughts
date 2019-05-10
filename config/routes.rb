@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post "/events", to: 'events#create'
   get "/events", to: 'events#show'
   get "/events/new/:calendar_id/:year/:month/:day", to: 'events#new'
-  get "/events/new_auto/:calendar_id/", to: 'events#new_auto'
+  get "/events/new_auto/:calendar_id/:year/:month/:day", to: 'events#new_auto'
 
   get "/events/:id/event_afterthought", to: 'events#event_afterthought'
 
