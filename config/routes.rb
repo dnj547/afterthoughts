@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   resources :users, :events, :calendars, :afterthoughts, :attendees
   resources :sessions, only: [:new, :create,:destroy]
 
-  # get '*path' => redirect('/')
+  get '*path' => redirect('/')
 
 
 end

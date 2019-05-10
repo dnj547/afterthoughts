@@ -12,15 +12,18 @@ class AttendeesController < ApplicationController
     elsif params.has_key?(:event_id)
       @event = Event.find(params[:event_id])
     end
-    @attendee = Attendee.create(attendee_params)
-    @event_attendee = EventAttendee.create(event: @event, attendee: @attendee)
+    @attendee = Attendee.new(attendee_params)
     if @attendee.valid?
-      flash[:notice] = "Attendee Added"
+      flash[:notice] = "Attendee Added!"
+      @event_attendee = EventAttendee.create(event: @event, attendee: @attendee)
       if @event.attendees
-          redirect_to "/events/attendees/new/#{@event.id}"
+        redirect_to "/events/attendees/new/#{@event.id}"
       else
       redirect_to @event
       end
+    else
+      flash[:alert] = @attendee.errors.full_messages
+      render :new
     end
   end
 
@@ -35,16 +38,18 @@ class AttendeesController < ApplicationController
     @user = current_user
     @afterthought = Afterthought.find(params[:id])
     @event = @afterthought.event
-    @attendee = Attendee.create(actual_params)
-    @afterthought_attendee = AfterthoughtAttendee.create(afterthought:@afterthought,attendee:@attendee)
+    @attendee = Attendee.new(actual_params)
     if @attendee.valid?
-      flash[:notice] = "Attendee Added"
-
+      flash[:notice] = "Attendee Added!"
+      @afterthought_attendee = AfterthoughtAttendee.create(afterthought:@afterthought,attendee:@attendee)
       if @afterthought.attendees
         redirect_to "/afterthoughts/attendees/new/#{@afterthought.id}"
       else
         redirect_to  @afterthought
       end
+    else
+      flash[:alert] = @attendee.errors.full_messages
+      render :new
     end
   end
 
